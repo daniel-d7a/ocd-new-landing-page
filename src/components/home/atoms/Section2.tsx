@@ -8,10 +8,14 @@ import { useEffect, useState } from "react";
 export function Section2() {
   const [heights, setHeights] = useState<string[]>([]);
 
+  let _months = months;
+
+  if (typeof window !== "undefined") {
+    _months = window.innerWidth <= 425 ? months.slice(0, -1) : months;
+  }
+
   /* if phone remove 1 item */
-  const [viewMonths] = useState(
-    window.innerWidth <= 425 ? months.slice(0, -1) : months
-  );
+  const [viewMonths] = useState(_months);
 
   useEffect(() => {
     const timer = setInterval(() => {
