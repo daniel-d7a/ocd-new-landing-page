@@ -26,24 +26,25 @@ export const ServiceCard = ({
     <div
       onClick={() => setSelectedIndex(index)}
       className={cn(
-        "hover:grayscale-0 w-full rounded-xl p-6 h-60  grid grid-cols-6 cursor-pointer transition-all",
+        "hover:grayscale-0 w-full rounded-xl p-6 md:h-60 min-h-64 grid grid-cols-6 cursor-pointer transition-all",
         index === 0 || index === 3 ? "bg-ocd-yellow text-black" : "bg-ocd-blue",
         montserrat.className,
         !active && "grayscale"
         // index === 0 || index === 3 ? styles.blackGrid : styles.whiteGrid
       )}
     >
-      <div className="col-span-4">
+      <div className="col-span-6 md:col-span-4">
         <p className={cn("text-3xl font-bold mb-4", recoleta.className)}>
           {name}
         </p>
         <p className="font-medium">{text}</p>
       </div>
-      <div className="col-span-2 flex flex-col items-center justify-between ">
+
+      <div className="col-span-6 md:col-span-2 flex md:flex-col flex-row-reverse  md:items-center items-end justify-between ">
         <Image className="" src={image} alt={name} width={150} height={150} />
         <RippleButton
           className={cn(
-            "transition-all flex items-center justify-center gap-2",
+            "transition-all flex items-center justify-center gap-2 md:mb-0 mb-4",
             index === 1 || index === 2 ? "hover:text-black" : "hover:text-white"
           )}
           hoverRippleColor={

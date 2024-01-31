@@ -6,9 +6,9 @@ import marketing3 from "@/assets/marketingMic.png";
 
 export function Section1() {
   return (
-    <div className="grid grid-cols-2 gap-16 items-center ">
-      <div className="mr-10 justify-self-end w-3/4">
-        <h2 className="text-3xl mb-10 font-semibold">
+    <div className="grid grid-cols-2 md:gap-16 items-center">
+      <div className="col-span-2 md:col-span-1 md:mr-10 justify-self-end md:w-3/4">
+        <h2 className="text-3xl text-center md:text-start mb-10 font-semibold">
           Crafting Success Stories in the World of Marketing
         </h2>
         <p className="text-lg ">
@@ -20,9 +20,9 @@ export function Section1() {
           ever-evolving world of marketing.
         </p>
       </div>
-      <CardContainer className="inter-var">
-        <CardBody className="relative group/card mr-16 flex w-full items-center my-10">
-          <CardItem translateZ="60" className="w-96">
+      <CardContainer className="inter-var col-span-2">
+        <CardBody className="relative -mr-[45%] w-full group/card md:mr-16 flex items-center my-10">
+          <CardItem translateZ="60" className=" w-44 md:w-60">
             <Image
               src={marketing2}
               width="400"
@@ -31,7 +31,7 @@ export function Section1() {
             />
           </CardItem>
           <div>
-            <CardItem translateZ="100" className="w-full">
+            <CardItem translateZ="100" className="w-44 md:w-60">
               <Image
                 src={marketing1}
                 width="400"
@@ -39,7 +39,7 @@ export function Section1() {
                 alt="thumbnail"
               />
             </CardItem>
-            <CardItem translateZ="30" className="w-full">
+            <CardItem translateZ="30" className="w-44 md:w-60">
               <Image
                 src={marketing3}
                 width="400"

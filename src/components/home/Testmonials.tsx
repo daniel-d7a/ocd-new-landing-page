@@ -4,7 +4,7 @@ import { CarouselItem } from "./atoms/CarouselItem";
 export const Testmonials = () => {
   return (
     <section className="mb-16 bg-neutral-900 py-10">
-      <p className="text-5xl font-semibold text-center mb-6">
+      <p className="mx-6 text-4xl md:text-5xl font-semibold text-center mb-6">
         What people say about us?
       </p>
       <InfiniteMovingCards speed="slow">

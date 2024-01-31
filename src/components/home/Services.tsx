@@ -14,15 +14,17 @@ export const Services = () => {
   const { slogan } = services[selectedIndex];
 
   return (
-    <section className="px-16 bg-neutral-900 py-10">
-      <p className="text-5xl font-semibold text-center">What do we offer?</p>
+    <section className="px-6 md:px-16 bg-neutral-900 py-10">
+      <p className="text-4xl md:text-5xl font-semibold text-center">
+        What do we offer?
+      </p>
       <div className="mt-6">
         {/* <p
           className={cn("text-5xl font-bold w-3/4 mb-6", montserrat.className)}
         >
           {slogan}
         </p> */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
           {services.map((service, i) => (
             <ServiceCard
               setSelectedIndex={setSelectedIndex}

@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "h-min-screen bg-neutral-900 text-white",
+          "max-w-[100vw] md:max-w-full h-min-screen bg-neutral-900 text-white",
           recoleta.className
         )}
       >

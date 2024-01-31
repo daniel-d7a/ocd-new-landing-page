@@ -9,7 +9,7 @@ export const CarouselItem = ({
   return (
     <div
       className={cn(
-        "h-72 w-[600px] bg-neutral-800 bg-opacity-40 p-8 rounded",
+        "w-80 h-[400px]  md:h-72 md:w-[600px] bg-neutral-800 bg-opacity-40 p-8 rounded",
         montserrat.className
       )}
     >
