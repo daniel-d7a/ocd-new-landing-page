@@ -3,7 +3,14 @@
 import CountUp from "react-countup";
 export const Count = ({ end, text }: { end: number; text: string }) => {
   return (
-    <CountUp suffix="+" start={0} end={end} duration={2.75} separator=",">
+    <CountUp
+      delay={0}
+      suffix="+"
+      start={0}
+      end={end}
+      duration={2.75}
+      separator=","
+    >
       {({ countUpRef, getCountUp }) => (
         <div className="flex flex-col items-center justify-center">
           <span
