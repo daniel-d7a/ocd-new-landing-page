@@ -1,0 +1,2234 @@
+/*
+A better ripple button. Ripples on hover too :)
+Made with Svelte and SCSS: stackblitz.com/edit/vitejs-vite-q7fgp7
+ */
+
+.btn {
+  height: 3em;
+  width: 9em;
+  position: relative;
+  isolation: isolate;
+  cursor: pointer;
+}
+
+.btn > span {
+  position: relative;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.rippleContainer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(36, 0.25em);
+  border-radius: 0.8em;
+  padding: 0.3em;
+  overflow: hidden;
+}
+
+.rippleContainer > span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rippleContainer > span::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  background-color: #fff;
+  transition: width 0.5s ease-out, height 0.5s ease-out, opacity 1s;
+  width: 18.973665961em;
+  height: 18.973665961em;
+  opacity: 0;
+  border-radius: 999em;
+}
+
+.rippleContainer > span:active::after {
+  transition: 0s;
+  width: 0em;
+  height: 0em;
+  opacity: 1;
+}
+
+.hoverRipple {
+  pointer-events: none;
+  position: absolute;
+  transition: width 0.5s ease-out, height 0.5s ease-out, top 99999s linear,
+    left 9999s linear;
+  transform: translate(-50%, -50%);
+  top: 0em;
+  left: 0em;
+  width: 0em;
+  height: 0em;
+  border-radius: 999em;
+}
+
+.rippleContainer > span:hover ~ .hoverRipple {
+  transition: width 0.5s ease-out, height 0.5s ease-out, top 0s linear,
+    left 0s linear;
+  width: 18.973665961em;
+  height: 18.973665961em;
+}
+
+.rippleContainer > span:nth-child(1):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(37):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(73):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(109):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(145):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(181):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(217):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(253):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(289):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(325):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(361):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(397):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 0.1875em;
+}
+
+.rippleContainer > span:nth-child(2):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(38):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(74):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(110):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(146):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(182):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(218):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(254):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(290):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(326):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(362):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(398):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 0.4375em;
+}
+
+.rippleContainer > span:nth-child(3):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(39):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(75):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(111):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(147):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(183):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(219):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(255):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(291):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(327):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(363):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(399):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 0.6875em;
+}
+
+.rippleContainer > span:nth-child(4):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(40):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(76):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(112):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(148):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(184):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(220):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(256):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(292):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(328):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(364):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(400):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 0.9375em;
+}
+
+.rippleContainer > span:nth-child(5):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(41):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(77):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(113):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(149):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(185):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(221):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(257):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(293):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(329):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(365):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(401):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 1.1875em;
+}
+
+.rippleContainer > span:nth-child(6):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(42):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(78):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(114):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(150):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(186):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(222):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(258):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(294):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(330):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(366):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(402):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 1.4375em;
+}
+
+.rippleContainer > span:nth-child(7):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(43):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(79):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(115):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(151):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(187):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(223):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(259):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(295):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(331):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(367):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(403):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 1.6875em;
+}
+
+.rippleContainer > span:nth-child(8):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(44):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(80):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(116):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(152):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(188):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(224):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(260):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(296):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(332):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(368):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(404):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 1.9375em;
+}
+
+.rippleContainer > span:nth-child(9):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(45):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(81):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(117):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(153):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(189):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(225):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(261):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(297):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(333):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(369):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(405):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 2.1875em;
+}
+
+.rippleContainer > span:nth-child(10):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(46):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(82):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(118):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(154):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(190):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(226):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(262):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(298):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(334):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(370):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(406):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 2.4375em;
+}
+
+.rippleContainer > span:nth-child(11):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(47):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(83):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(119):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(155):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(191):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(227):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(263):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(299):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(335):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(371):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(407):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 2.6875em;
+}
+
+.rippleContainer > span:nth-child(12):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(48):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(84):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(120):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(156):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(192):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(228):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(264):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(300):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(336):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(372):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(408):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 2.9375em;
+}
+
+.rippleContainer > span:nth-child(13):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(49):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(85):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(121):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(157):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(193):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(229):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(265):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(301):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(337):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(373):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(409):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 3.1875em;
+}
+
+.rippleContainer > span:nth-child(14):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(50):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(86):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(122):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(158):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(194):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(230):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(266):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(302):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(338):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(374):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(410):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 3.4375em;
+}
+
+.rippleContainer > span:nth-child(15):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(51):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(87):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(123):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(159):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(195):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(231):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(267):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(303):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(339):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(375):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(411):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 3.6875em;
+}
+
+.rippleContainer > span:nth-child(16):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(52):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(88):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(124):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(160):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(196):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(232):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(268):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(304):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(340):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(376):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(412):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 3.9375em;
+}
+
+.rippleContainer > span:nth-child(17):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(53):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(89):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(125):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(161):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(197):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(233):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(269):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(305):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(341):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(377):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(413):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 4.1875em;
+}
+
+.rippleContainer > span:nth-child(18):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(54):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(90):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(126):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(162):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(198):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(234):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(270):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(306):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(342):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(378):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(414):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 4.4375em;
+}
+
+.rippleContainer > span:nth-child(19):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(55):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(91):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(127):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(163):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(199):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(235):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(271):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(307):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(343):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(379):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(415):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 4.6875em;
+}
+
+.rippleContainer > span:nth-child(20):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(56):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(92):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(128):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(164):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(200):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(236):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(272):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(308):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(344):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(380):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(416):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 4.9375em;
+}
+
+.rippleContainer > span:nth-child(21):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(57):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(93):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(129):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(165):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(201):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(237):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(273):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(309):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(345):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(381):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(417):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 5.1875em;
+}
+
+.rippleContainer > span:nth-child(22):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(58):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(94):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(130):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(166):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(202):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(238):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(274):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(310):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(346):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(382):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(418):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 5.4375em;
+}
+
+.rippleContainer > span:nth-child(23):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(59):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(95):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(131):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(167):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(203):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(239):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(275):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(311):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(347):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(383):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(419):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 5.6875em;
+}
+
+.rippleContainer > span:nth-child(24):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(60):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(96):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(132):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(168):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(204):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(240):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(276):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(312):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(348):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(384):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(420):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 5.9375em;
+}
+
+.rippleContainer > span:nth-child(25):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(61):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(97):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(133):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(169):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(205):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(241):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(277):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(313):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(349):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(385):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(421):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 6.1875em;
+}
+
+.rippleContainer > span:nth-child(26):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(62):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(98):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(134):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(170):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(206):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(242):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(278):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(314):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(350):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(386):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(422):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 6.4375em;
+}
+
+.rippleContainer > span:nth-child(27):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(63):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(99):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(135):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(171):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(207):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(243):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(279):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(315):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(351):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(387):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(423):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 6.6875em;
+}
+
+.rippleContainer > span:nth-child(28):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(64):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(100):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(136):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(172):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(208):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(244):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(280):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(316):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(352):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(388):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(424):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 6.9375em;
+}
+
+.rippleContainer > span:nth-child(29):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(65):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(101):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(137):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(173):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(209):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(245):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(281):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(317):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(353):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(389):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(425):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 7.1875em;
+}
+
+.rippleContainer > span:nth-child(30):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(66):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(102):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(138):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(174):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(210):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(246):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(282):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(318):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(354):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(390):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(426):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 7.4375em;
+}
+
+.rippleContainer > span:nth-child(31):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(67):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(103):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(139):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(175):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(211):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(247):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(283):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(319):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(355):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(391):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(427):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 7.6875em;
+}
+
+.rippleContainer > span:nth-child(32):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(68):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(104):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(140):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(176):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(212):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(248):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(284):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(320):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(356):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(392):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(428):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 7.9375em;
+}
+
+.rippleContainer > span:nth-child(33):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(69):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(105):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(141):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(177):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(213):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(249):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(285):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(321):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(357):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(393):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(429):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 8.1875em;
+}
+
+.rippleContainer > span:nth-child(34):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(70):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(106):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(142):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(178):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(214):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(250):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(286):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(322):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(358):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(394):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(430):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 8.4375em;
+}
+
+.rippleContainer > span:nth-child(35):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(71):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(107):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(143):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(179):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(215):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(251):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(287):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(323):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(359):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(395):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(431):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 8.6875em;
+}
+
+.rippleContainer > span:nth-child(36):hover ~ .hoverRipple {
+  top: 0.125em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(72):hover ~ .hoverRipple {
+  top: 0.375em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(108):hover ~ .hoverRipple {
+  top: 0.625em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(144):hover ~ .hoverRipple {
+  top: 0.875em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(180):hover ~ .hoverRipple {
+  top: 1.125em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(216):hover ~ .hoverRipple {
+  top: 1.375em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(252):hover ~ .hoverRipple {
+  top: 1.625em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(288):hover ~ .hoverRipple {
+  top: 1.875em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(324):hover ~ .hoverRipple {
+  top: 2.125em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(360):hover ~ .hoverRipple {
+  top: 2.375em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(396):hover ~ .hoverRipple {
+  top: 2.625em;
+  left: 8.9375em;
+}
+
+.rippleContainer > span:nth-child(432):hover ~ .hoverRipple {
+  top: 2.875em;
+  left: 8.9375em;
+}

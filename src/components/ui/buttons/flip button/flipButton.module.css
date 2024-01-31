@@ -1,0 +1,39 @@
+.flipButton {
+  cursor: pointer;
+  width: 95.02px;
+  height: 42.66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipButton .spanMother {
+  display: flex;
+  overflow: hidden;
+}
+
+.flipButton:hover .spanMother {
+  position: absolute;
+}
+
+.flipButton:hover .spanMother span {
+  transform: translateY(1.2em);
+}
+
+.flipButton .spanMother2 {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+}
+
+.flipButton .spanMother2 span {
+  transform: translateY(-1.2em);
+}
+
+.flipButton:hover .spanMother2 span {
+  transform: translateY(0);
+}
+
+.flipButton .spanMother2 span {
+  transition: 0.2s;
+}
