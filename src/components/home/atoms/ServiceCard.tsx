@@ -34,18 +34,16 @@ export const ServiceCard = ({
         opacity: 1,
       }}
       transition={{
-        // ease: "easeOut",
-        // type: "just",
         duration: 1,
-        // delay: index * 0.1,
       }}
       onClick={() => setSelectedIndex(index)}
       className={cn(
         "hover:grayscale-0 w-full rounded-xl p-6 md:h-60 min-h-64 grid grid-cols-6 cursor-pointer transition-all",
-        index === 0 || index === 3 ? "bg-ocd-yellow text-black" : "bg-ocd-blue",
+        index === 0 || index === 3
+          ? "bg-ocd-yellow text-black"
+          : "bg-ocd-blue text-white",
         montserrat.className,
         !active && "grayscale"
-        // index === 0 || index === 3 ? styles.blackGrid : styles.whiteGrid
       )}
     >
       <div className="col-span-6 md:col-span-4">

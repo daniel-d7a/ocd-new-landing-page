@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaBehance } from "react-icons/fa6";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
@@ -7,7 +7,7 @@ import { NeonText } from "../ui/NeonText";
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col-reverse md:grid md:grid-cols-2 px-4 md:px-16 pb-10 mt-10 bg-neutral-900 pt-10">
+    <footer className="text-white flex flex-col-reverse md:grid md:grid-cols-2 px-4 md:px-16 pb-10 mt-10 bg-neutral-900 pt-10">
       <p className="md:hidden block text-neutral-300 mt-10">
         © 2024. All rights reserved
       </p>
@@ -42,7 +42,14 @@ export const Footer = () => {
         </div>
         <div className="flex gap-4">
           <FaFacebookF size={30} />
-          <FaInstagram size={30} />
+          <a
+            href="https://www.instagram.com/ocd_digital_marketing_agency/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaInstagram size={30} />
+          </a>
+          <FaBehance size={30} />
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 export const Count = ({ end, text }: { end: number; text: string }) => {
   return (
     <CountUp
-      delay={0}
+      delay={2}
       suffix="+"
       start={0}
       end={end}

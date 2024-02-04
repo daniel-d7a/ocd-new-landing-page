@@ -8,22 +8,28 @@ import writing from "@/assets/writing.png";
 import abstract from "@/assets/abstract.png";
 import social from "@/assets/social-icons.png";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export const Services = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const { slogan } = services[selectedIndex];
 
   return (
-    <section className="px-6 md:px-16 bg-neutral-900 py-10">
+    <motion.section
+      viewport={{ amount: 0.7 }}
+      onViewportEnter={() => {
+        document.querySelector("body")!.style.backgroundColor = "#FFD900";
+        document.querySelector("body")!.style.color = "#000000";
+      }}
+      onViewportLeave={() => {
+        document.querySelector("body")!.style.backgroundColor = "#000000";
+        document.querySelector("body")!.style.color = "#FFFFFF";
+      }}
+      className="px-6 md:px-16 py-10"
+    >
       <p className="text-4xl md:text-5xl font-semibold text-center">
         What do we offer?
       </p>
       <div className="mt-6">
-        {/* <p
-          className={cn("text-5xl font-bold w-3/4 mb-6", montserrat.className)}
-        >
-          {slogan}
-        </p> */}
         <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
           {services.map((service, i) => (
             <ServiceCard
@@ -36,7 +42,7 @@ export const Services = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

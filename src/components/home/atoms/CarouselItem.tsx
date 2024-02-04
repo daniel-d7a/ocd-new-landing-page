@@ -9,7 +9,7 @@ export const CarouselItem = ({
   return (
     <div
       className={cn(
-        "w-80 h-[400px]  md:h-72 md:w-[600px] bg-neutral-800 bg-opacity-40 p-8 rounded",
+        "w-80 h-[400px] text-white  md:h-72 md:w-[600px] bg-neutral-800 bg-opacity-40 p-8 rounded",
         montserrat.className
       )}
     >
@@ -24,7 +24,7 @@ export const CarouselItem = ({
       <p className="leading-relaxed mb-6">{quote}</p>
       <div className="inline-flex items-center">
         <span className="flex-grow flex flex-col">
-          <span className="title-font font-medium text-white">{name}</span>
+          <span className="title-font font-medium">{name}</span>
           <span className="text-gray-300 text-sm">{title}</span>
         </span>
       </div>

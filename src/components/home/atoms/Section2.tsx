@@ -26,7 +26,7 @@ export function Section2() {
 
   return (
     <div className="grid grid-cols-2 gap-10 items-center ">
-      <CardContainer className="col-span-2 inter-var">
+      <CardContainer className="col-span-2 inter-var text-white">
         <CardBody className="grid grid-cols-2 -mr-[55%] gap-4 relative group/card md:mr-6 w-[90dvw] md:w-[400px] my-10 bg-neutral-800 p-6 h-[550px] rounded-3xl">
           <div
             className={cn(

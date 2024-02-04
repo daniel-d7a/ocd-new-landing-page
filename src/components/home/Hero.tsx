@@ -24,7 +24,7 @@ export const Hero = () => {
               ease: "easeOut",
               type: "just",
               duration: 1,
-              delay: 0.5,
+              delay: 1,
             }}
           >
             Design, Develop,
@@ -38,7 +38,7 @@ export const Hero = () => {
               textRef.current!.style.overflowY = "visible";
             }}
             transition={{
-              delay: 1,
+              delay: 1.5,
               ease: "easeOut",
               type: "just",
               duration: 1,
@@ -70,7 +70,7 @@ export const Hero = () => {
         <div className="w-full overflow-x-hidden">
           <motion.p
             transition={{
-              delay: 1,
+              delay: 1.5,
               ease: "easeOut",
               type: "just",
               duration: 1,
@@ -89,7 +89,7 @@ export const Hero = () => {
             animate={{ rotateZ: -20 }}
             transition={{
               duration: 0.001,
-              delay: 0.5,
+              delay: 1.5,
               repeat: Infinity,
               repeatType: "reverse",
               repeatDelay: 1.8,
@@ -101,7 +101,7 @@ export const Hero = () => {
               transition={{
                 ease: "anticipate",
                 duration: 0.7,
-                delay: 1,
+                delay: 1.5,
               }}
               className="w-[150%] md:w-[200%] -ml-[100%] md:mt-10 relative"
             >

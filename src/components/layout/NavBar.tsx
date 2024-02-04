@@ -34,7 +34,7 @@ export const NavBar = () => {
   return (
     <>
       {/* mobile navbar */}
-      <nav className="md:hidden text-lg group/card flex items-center justify-between mx-4 px-6 bg-neutral-800 rounded-3xl py-2 mt-6">
+      <nav className="md:hidden text-lg text-white group/card flex items-center justify-between mx-4 px-6 bg-neutral-800 rounded-3xl py-2 mt-6">
         <div className="relative z-0">
           <Image className="" src={logo} alt="logo" width={50} />
         </div>
@@ -63,7 +63,7 @@ export const NavBar = () => {
         </div>
       </nav>
       {/* desktop navbar */}
-      <nav className="hidden text-lg group/card md:flex items-center justify-between mx-10 px-6 bg-neutral-800 rounded-3xl py-2 mt-6">
+      <nav className="hidden text-lg text-white group/card md:flex items-center justify-between mx-10 px-6 bg-neutral-800 rounded-3xl py-2 mt-6">
         <div className="relative z-0">
           <Image className="" src={logo} alt="logo" width={70} />
         </div>

@@ -74,7 +74,7 @@ export const Tabs = ({
 
             <span
               className={cn(
-                "relative block text-white dark:text-white w-40",
+                "relative block text-white w-40",
                 active.value === tab.value ? "text-black" : ""
               )}
             >
