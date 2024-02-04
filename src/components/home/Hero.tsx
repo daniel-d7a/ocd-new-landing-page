@@ -3,7 +3,7 @@
 import { cn } from "@/lib/cn";
 import { montserrat, neon } from "@/lib/fonts";
 import Image from "next/image";
-import megaphone from "@/assets/megaphone.png";
+import megaphone from "@/assets/megaphone2.png";
 import { Count } from "../ui/countUp";
 import { motion } from "framer-motion";
 import lightning from "@/assets/lightning.png";
@@ -24,6 +24,7 @@ export const Hero = () => {
               ease: "easeOut",
               type: "just",
               duration: 1,
+              delay: 0.5,
             }}
           >
             Design, Develop,
@@ -37,7 +38,7 @@ export const Hero = () => {
               textRef.current!.style.overflowY = "visible";
             }}
             transition={{
-              delay: 0.5,
+              delay: 1,
               ease: "easeOut",
               type: "just",
               duration: 1,
@@ -54,22 +55,6 @@ export const Hero = () => {
             >
               Experts
             </NeonText>
-            {/* <motion.div
-              style={{
-                originX: 0.1,
-              }}
-              initial={{ rotateZ: 0 }}
-              animate={{ rotateZ: 8 }}
-              transition={{
-                ease: "easeOut",
-                delay: 1.8,
-                type: "spring",
-                damping: 0.5,
-              }}
-              className="bg-ocd-yellow rounded-full w-min -ml-4 md:ml-0 px-6 pb-2 text-black mb-10"
-            >
-              experts
-            </motion.div> */}
           </motion.h1>
         </div>
       </div>
@@ -85,7 +70,7 @@ export const Hero = () => {
         <div className="w-full overflow-x-hidden">
           <motion.p
             transition={{
-              delay: 0.5,
+              delay: 1,
               ease: "easeOut",
               type: "just",
               duration: 1,
@@ -116,63 +101,11 @@ export const Hero = () => {
               transition={{
                 ease: "anticipate",
                 duration: 0.7,
-                delay: 0.5,
+                delay: 1,
               }}
-              className="w-11/12 md:w-full md:mt-10 relative"
+              className="w-[150%] md:w-[200%] -ml-[100%] md:mt-10 relative"
             >
-              <motion.div
-                animate={{ opacity: 1 }}
-                initial={{ opacity: 0 }}
-                transition={{
-                  delay: 0.5,
-                  duration: 0.001,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  repeatDelay: 0.6,
-                }}
-              >
-                <Image
-                  src={lightning}
-                  alt="lightning"
-                  width={40}
-                  className="absolute top-0 right-10 rotate-[20deg] scale-150"
-                />
-
-                <Image
-                  src={lightning}
-                  alt="lightning"
-                  width={40}
-                  className="absolute top-36 right-0 -rotate-[30deg] -scale-y-150 scale-150"
-                />
-              </motion.div>
-              <motion.div
-                animate={{ opacity: 0 }}
-                initial={{ opacity: 1 }}
-                style={{
-                  originX: 1,
-                }}
-                transition={{
-                  delay: 0.5,
-                  duration: 0.001,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  repeatDelay: 0.6,
-                }}
-              >
-                <Image
-                  src={lightning}
-                  alt="lightning"
-                  width={40}
-                  className="absolute top-6 right-12 rotate-[20deg] scale-150"
-                />
-                <Image
-                  src={lightning}
-                  alt="lightning"
-                  width={40}
-                  className="absolute bottom-32 right-2 -rotate-[50deg] -scale-y-150 scale-150"
-                />
-              </motion.div>
-              <Image src={megaphone} alt="megaphone" width={400} />
+              <Image className="-scale-x-100" src={megaphone} alt="megaphone" />
             </motion.div>
           </motion.div>
         </div>

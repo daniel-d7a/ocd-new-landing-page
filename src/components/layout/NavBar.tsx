@@ -21,13 +21,13 @@ export const NavBar = () => {
         <Link href="/">Home</Link>
       </li>
       <li>
-        <Link href="/about">About</Link>
+        <Link href="/About">About</Link>
       </li>
       <li>
-        <Link href="/services">Services</Link>
+        <Link href="/Services">Services</Link>
       </li>
       <li>
-        <Link href="/contact">Contact</Link>
+        <Link href="/Contact">Contact</Link>
       </li>
     </>
   );
@@ -63,7 +63,7 @@ export const NavBar = () => {
         </div>
       </nav>
       {/* desktop navbar */}
-      <nav className="hidden  text-lg group/card md:flex items-center justify-between mx-10 px-6 bg-neutral-800 rounded-3xl py-2 mt-6">
+      <nav className="hidden text-lg group/card md:flex items-center justify-between mx-10 px-6 bg-neutral-800 rounded-3xl py-2 mt-6">
         <div className="relative z-0">
           <Image className="" src={logo} alt="logo" width={70} />
         </div>

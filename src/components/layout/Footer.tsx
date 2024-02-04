@@ -11,7 +11,7 @@ export const Footer = () => {
       <p className="md:hidden block text-neutral-300 mt-10">
         © 2024. All rights reserved
       </p>
-      <div className="flex-col flex justify-between py-4 h-[520px] md:h-auto md:mt-0 mt-10">
+      <div className="col-span-1 flex-col flex justify-between py-4 h-[520px] md:h-auto md:mt-0 mt-10">
         <p className="text-xl">Contact</p>
         <div className="text-xl">
           <p className="text-4xl">We </p>
@@ -46,7 +46,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="border-ocd-yellow border-4 rounded-2xl w-full p-4 pb-10">
+      <div className="col-span-1 col-start-2 border-ocd-yellow border-4 rounded-2xl w-full p-4 pb-10">
         <p className="text-xl">Hire Us</p>
         <p className="text-3xl font-semibold mt-6">
           Lets Create a project together ?
