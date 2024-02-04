@@ -2,8 +2,8 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import { Button } from "../ui/button";
 import { ScrollButton } from "../ui/buttons/scroll button/ScrollButton";
+import { NeonText } from "../ui/NeonText";
 
 export const Footer = () => {
   return (
@@ -16,17 +16,23 @@ export const Footer = () => {
         <div className="text-xl">
           <p className="text-4xl">We </p>
           <div className="text-6xl relative font-semibold">
-            <div className="h-full w-11 z-0 absolute bg-gradient-to-b from-ocd-yellow to-ocd-blue"></div>
-            <div className="relative z-10 mix">
-              <p>
-                <span className="text-neutral-900 mr-1">O</span>nly
-              </p>
-              <p>
-                <span className="text-neutral-900 mr-1.5">C</span>reate
-              </p>
-              <p>
-                <span className="text-neutral-900 mr-1">D</span>ifference.
-              </p>
+            <div className="relative z-10">
+              <div className="flex">
+                <NeonText className={"mr-1"}>O</NeonText>
+                <p>nly</p>
+              </div>
+              <div className="flex">
+                <NeonText color="#ffffff" className=" mr-1.5">
+                  C
+                </NeonText>
+                <p>reate</p>
+              </div>
+              <div className="flex">
+                <NeonText color="#0026FF" className=" mr-1">
+                  D
+                </NeonText>
+                <p>ifference.</p>
+              </div>
             </div>
           </div>
         </div>

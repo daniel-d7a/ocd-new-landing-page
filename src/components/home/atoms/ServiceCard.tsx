@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import { RippleButton } from "@/components/ui/buttons/ripple button/RippleButton";
 import { IoMdArrowForward } from "react-icons/io";
+import { motion } from "framer-motion";
 
 export const ServiceCard = ({
   image,
@@ -23,7 +24,21 @@ export const ServiceCard = ({
   setSelectedIndex: Dispatch<SetStateAction<number>>;
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{
+        y: 100,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        // ease: "easeOut",
+        // type: "just",
+        duration: 1,
+        // delay: index * 0.1,
+      }}
       onClick={() => setSelectedIndex(index)}
       className={cn(
         "hover:grayscale-0 w-full rounded-xl p-6 md:h-60 min-h-64 grid grid-cols-6 cursor-pointer transition-all",
@@ -57,6 +72,6 @@ export const ServiceCard = ({
           </div>
         </RippleButton>
       </div>
-    </div>
+    </motion.div>
   );
 };

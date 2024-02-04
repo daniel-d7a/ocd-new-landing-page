@@ -16,7 +16,9 @@ export const Count = ({ end, text }: { end: number; text: string }) => {
           <span
             className="text-ocd-yellow text-5xl font-normal"
             ref={countUpRef}
-          />
+          >
+            0
+          </span>
           <p className="text-2xl font-normal w-full text-center">{text}</p>
         </div>
       )}

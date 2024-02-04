@@ -33,6 +33,7 @@ export const NavBar = () => {
   );
   return (
     <>
+      {/* mobile navbar */}
       <nav className="md:hidden text-lg group/card flex items-center justify-between mx-4 px-6 bg-neutral-800 rounded-3xl py-2 mt-6">
         <div className="relative z-0">
           <Image className="" src={logo} alt="logo" width={50} />
@@ -70,7 +71,7 @@ export const NavBar = () => {
           {listItems}
         </ul>
         <div className="relative z-0">
-          <FlipButton className="border-2 rounded-full border-ocd-yellow">
+          <FlipButton className="border-2 rounded-full border-ocd-yellow text-xl h-10 w-24">
             Hire Us
           </FlipButton>
         </div>
