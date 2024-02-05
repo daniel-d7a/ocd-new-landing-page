@@ -15,7 +15,7 @@ export const Services = () => {
 
   return (
     <motion.section
-      viewport={{ amount: 0.5 }}
+      viewport={{ amount: 0.2 }}
       onViewportEnter={() => {
         document.querySelector("body")!.style.backgroundColor = "#FFD900";
         document.querySelector("body")!.style.color = "#000000";

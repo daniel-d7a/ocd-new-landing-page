@@ -16,7 +16,7 @@ export const Hero = () => {
   return (
     <section className="min-h-screen px-6 md:mx-16 mt-16 mb-10 grid grid-cols-3 grid-rows-2 md:justify-normal">
       <div className="flex flex-col items-center justify-center md:block text-7xl md:text-8xl font-semibold md:space-y-4 col-span-3 md:col-span-2">
-        <div className="w-full overflow-y-hidden">
+        <div className="w-min md:w-full overflow-y-hidden">
           <motion.h1
             initial={{ y: 200 }}
             animate={{ y: 0 }}
@@ -30,9 +30,9 @@ export const Hero = () => {
             Design, Develop,
           </motion.h1>
         </div>
-        <div ref={textRef} className="w-full overflow-y-hidden pb-8">
+        <div ref={textRef} className="w-min md:w-full overflow-y-hidden pb-8">
           <motion.h1
-            initial={{ y: 200 }}
+            initial={{ y: 240 }}
             animate={{ y: 0 }}
             onAnimationComplete={() => {
               textRef.current!.style.overflowY = "visible";
@@ -59,7 +59,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="col-span-3 md:col-span-2 flex md:flex-row flex-col items-center gap-8 md:gap-0 md:items-start justify-between md:pr-14 pt-0 md:pt-16">
+      <div className="col-span-3 md:col-span-2 grid grid-cols-2 items-start md:flex md:flex-row md:items-center gap-8 md:gap-0 md:items-start justify-between md:pr-14 pt-0 md:pt-16">
         <Count end={40} text="succesful event" />
         <Count end={150} text="ad campaign" />
         <Count end={100} text="completed project" />
@@ -103,7 +103,7 @@ export const Hero = () => {
                 duration: 0.7,
                 delay: 1.5,
               }}
-              className="w-[150%] md:w-[200%] -ml-[100%] md:mt-10 relative"
+              className="w-[150%] md:w-[200%] -ml-[60%] md:-ml-[100%] md:mt-10 relative"
             >
               <Image className="-scale-x-100" src={megaphone} alt="megaphone" />
             </motion.div>

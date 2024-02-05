@@ -26,7 +26,10 @@ export const AboutUs = () => {
       </p>
 
       <div
-        className={cn("min-h-[400vh] px-20 text-white", montserrat.className)}
+        className={cn(
+          "min-h-[400vh] px-2 md:px-20 flex flex-col md:flex-row text-white",
+          montserrat.className
+        )}
       >
         {cardsContent.map((content, i) => (
           <Card
@@ -49,7 +52,10 @@ const cardsContent = [
       <>
         <Text
           y={y}
-          className={cn("text-3xl mb-8 font-semibold", recoleta.className)}
+          className={cn(
+            "text-2xl md:text-3xl mb-8 font-semibold",
+            recoleta.className
+          )}
         >
           What is the first thing that came to your mind when you read “OCD”?
         </Text>
@@ -58,22 +64,43 @@ const cardsContent = [
           <Text y={y}>An abbreviation for a title?</Text>
           <Text y={y}>Or just three letters close together?</Text>
         </div>
-        <Text y={y} className="mb-2">
-          They all make sense.
-        </Text>
-        <Text y={y}>
-          That&apos;s how you might have read it, but we didn&apos;t write
-        </Text>
-        <Text y={y}>
-          it that way. We mean a lot by it. We decided to look at it
-        </Text>
-        <Text y={y}>
-          from a side that expresses our personalities, which do
-        </Text>
-        <Text y={y}>
-          not take things as they are, but rather adapt things to keep pace with
-          their skill, passion, and creative thought.
-        </Text>
+        <div className="hidden md:block mb-4">
+          <Text y={y} className="mb-2">
+            They all make sense.
+          </Text>
+          <Text y={y}>
+            That&apos;s how you might have read it, but we didn&apos;t write
+          </Text>
+          <Text y={y}>
+            it that way. We mean a lot by it. We decided to look at it
+          </Text>
+          <Text y={y}>
+            from a side that expresses our personalities, which do
+          </Text>
+          <Text y={y}>
+            not take things as they are, but rather adapt things to keep pace
+            with their skill, passion, and creative thought.
+          </Text>
+        </div>
+        <div className="md:hidden block mb-4">
+          <Text y={y} className="mb-2">
+            They all make sense.
+          </Text>
+          <Text y={y}>
+            That&apos;s how you might have read it, but we didn&apos;t write it
+            that way. We mean
+          </Text>
+          <Text y={y}>
+            a lot by it. We decided to look at it from a side that expresses our
+          </Text>
+          <Text y={y}>
+            personalities, which do not take things as they are, but rather
+            adapt things to
+          </Text>
+          <Text y={y}>
+            keep pace with their skill, passion, and creative thought.
+          </Text>
+        </div>
       </>
     ),
     image:
@@ -90,7 +117,7 @@ const cardsContent = [
         >
           Cautious
         </Text>
-        <Text y={y} className="text-xl">
+        <Text y={y} className="text-xl mb-4">
           We never risk failure. We take steady, confident and carefully
           considered steps towards the success of your brand.
         </Text>
@@ -113,7 +140,7 @@ const cardsContent = [
           Before you became our client, we were your followers. Our observation
           and scrutiny of every detail makes us the safe house for your brand.
         </Text>
-        <Text y={y} className="text-xl mt-4">
+        <Text y={y} className="text-xl mt-4 mb-4">
           Our work based on every small detail to ultimately produce successful
           work from all angles and by all standards.
         </Text>
@@ -136,7 +163,7 @@ const cardsContent = [
           We are not the audience that will applaud you in the end. We are the
           friend who will walk the path with you step by step.
         </Text>
-        <Text y={y} className="text-xl mt-4">
+        <Text y={y} className="text-xl mt-4 mb-4">
           We feel what you feel and dream what you dream. Your brand&apos;s
           problems affect us, and its success makes us happy as well.
         </Text>

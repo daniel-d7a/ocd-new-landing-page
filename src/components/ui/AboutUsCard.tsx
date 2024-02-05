@@ -26,7 +26,7 @@ export const Card = ({
   const textPosition = useTransform(
     parentYProgress,
     [startUp, endUp, startDown, endDown],
-    [100, 0, 0, -100]
+    [300, 0, 0, -300]
   );
 
   const imagePosition = useTransform(
@@ -38,12 +38,14 @@ export const Card = ({
   return (
     <div
       className={cn(
-        " sticky top-20 flex justify-center h-[90dvh] py-14 gap-10",
+        " sticky top-20 md:flex w-full justify-center h-[90dvh] py-6 md:py-14 gap-10",
         index % 2 === 0 && "flex-row-reverse"
       )}
     >
-      <div className=" text-lg w-3/5">{children(textPosition)}</div>
-      <div className=" grid place-items-start w-2/5  overflow-hidden">
+      <div className=" md:text-lg w-full md:w-3/5">
+        {children(textPosition)}
+      </div>
+      <div className=" grid place-items-start w-full md:w-2/5  overflow-hidden">
         <motion.div
           style={{
             x: imagePosition,
