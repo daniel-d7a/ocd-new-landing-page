@@ -8,6 +8,18 @@ const nextConfig = {
         port: "",
         // pathname: "/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
+        port: "",
+        // pathname: "/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "img.fixthephoto.com",
+        port: "",
+        // pathname: "/images/**",
+      },
     ],
   },
 };

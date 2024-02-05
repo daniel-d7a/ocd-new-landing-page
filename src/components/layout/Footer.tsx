@@ -41,7 +41,13 @@ export const Footer = () => {
           <p>fady_hany@ocd.com</p>
         </div>
         <div className="flex gap-4">
-          <FaFacebookF size={30} />
+          <a
+            href="https://www.facebook.com/OCD.Digital.Marketing"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaFacebookF size={30} />
+          </a>
           <a
             href="https://www.instagram.com/ocd_digital_marketing_agency/"
             target="_blank"
@@ -49,7 +55,13 @@ export const Footer = () => {
           >
             <FaInstagram size={30} />
           </a>
-          <FaBehance size={30} />
+          <a
+            href="https://www.instagram.com/ocd_digital_marketing_agency/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaBehance size={30} />
+          </a>
         </div>
       </div>
 

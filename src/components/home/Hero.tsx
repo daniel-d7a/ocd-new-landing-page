@@ -14,7 +14,7 @@ export const Hero = () => {
   const textRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="px-6 md:mx-16 mt-16 mb-10 grid grid-cols-3 grid-rows-2 md:justify-normal">
+    <section className="min-h-screen px-6 md:mx-16 mt-16 mb-10 grid grid-cols-3 grid-rows-2 md:justify-normal">
       <div className="flex flex-col items-center justify-center md:block text-7xl md:text-8xl font-semibold md:space-y-4 col-span-3 md:col-span-2">
         <div className="w-full overflow-y-hidden">
           <motion.h1

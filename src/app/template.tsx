@@ -2,18 +2,22 @@
 import { Footer } from "@/components/layout/Footer";
 import { NavBar } from "@/components/layout/NavBar";
 import { cn } from "@/lib/cn";
-import { stagger, useAnimate, motion } from "framer-motion";
+import { stagger, useAnimate, motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import { usePathname } from "next/navigation";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const [scope, animate] = useAnimate();
+
+  const pathname = usePathname();
 
   const animation = {
     initial: {
       x: "-115%",
     },
     transition: {
-      ease: "easeInOut",
+      ease: [0.83, 0, 0.17, 1],
     },
   };
 
@@ -49,39 +53,43 @@ export default function Template({ children }: { children: React.ReactNode }) {
   ];
 
   return (
-    <>
-      <motion.main
-        ref={scope}
-        className="fixed top-0 left-0 h-[100dvh] w-[100vw] animation-parent z-50 pointer-events-none"
-      >
-        {Array(8)
-          .fill("")
-          .map((_, i) => (
-            <motion.div
-              key={i}
-              {...animation}
-              className={cn(
-                "absolute w-[100vw] h-[25vh]",
-                i % 2 === 0
-                  ? i % 4 !== 0
-                    ? "bg-ocd-blue"
-                    : "bg-ocd-yellow"
-                  : "bg-neutral-800",
-                i % 2 !== 0 && "z-20",
-                positions[i]
-              )}
-            ></motion.div>
-          ))}
-      </motion.main>
-      <motion.div
-        initial={{ opacity: 0, x: 0, y: 50 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ delay: 1.3 }}
-      >
-        <NavBar />
-        {children}
-        <Footer />
-      </motion.div>
-    </>
+    <ReactLenis root>
+      <AnimatePresence>
+        <motion.main
+          ref={scope}
+          className="fixed top-0 left-0 h-[100dvh] w-[100vw] animation-parent z-50 pointer-events-none"
+        >
+          {Array(8)
+            .fill("")
+            .map((_, i) => (
+              <motion.div
+                key={i}
+                {...animation}
+                className={cn(
+                  "absolute w-[100vw] h-[25vh]",
+                  i % 2 === 0
+                    ? i % 4 !== 0
+                      ? "bg-ocd-blue"
+                      : "bg-ocd-yellow"
+                    : "bg-neutral-800",
+                  i % 2 !== 0 && "z-20",
+                  positions[i]
+                )}
+              ></motion.div>
+            ))}
+        </motion.main>
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 0, x: 0, y: 50 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          exit={{ opacity: 0, x: 0, y: 50 }}
+          transition={{ delay: 1.3 }}
+        >
+          <NavBar />
+          {children}
+          <Footer />
+        </motion.div>
+      </AnimatePresence>
+    </ReactLenis>
   );
 }
