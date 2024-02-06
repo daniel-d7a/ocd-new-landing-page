@@ -3,10 +3,10 @@ import { Footer } from "@/components/layout/Footer";
 import { NavBar } from "@/components/layout/NavBar";
 import { cn } from "@/lib/cn";
 import { stagger, useAnimate, motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { usePathname } from "next/navigation";
-
+import { BsFillTriangleFill } from "react-icons/bs";
 export default function Template({ children }: { children: React.ReactNode }) {
   const [scope, animate] = useAnimate();
 
@@ -52,6 +52,14 @@ export default function Template({ children }: { children: React.ReactNode }) {
     "top-[80dvh]",
   ];
 
+  const [showBtn, setShowBtn] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const lenis = useLenis(({ scroll, progress }) => {
+    console.log("scroll => ", scroll);
+    setShowBtn(scroll > 200);
+    setProgress(progress);
+  });
+
   return (
     <ReactLenis root>
       <AnimatePresence>
@@ -88,6 +96,17 @@ export default function Template({ children }: { children: React.ReactNode }) {
           <NavBar />
           {children}
           <Footer />
+          <div
+            onClick={() => {
+              lenis.scrollTo(0, { duration: 2 * progress });
+            }}
+            className={cn(
+              "fixed right-10 transition-all text-white bg-ocd-blue p-4 rounded-full cursor-pointer ",
+              showBtn ? "bottom-10" : "-bottom-12"
+            )}
+          >
+            <BsFillTriangleFill />
+          </div>
         </motion.div>
       </AnimatePresence>
     </ReactLenis>

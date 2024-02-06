@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import { RippleButton } from "@/components/ui/buttons/ripple button/RippleButton";
 import { IoMdArrowForward } from "react-icons/io";
-import { motion } from "framer-motion";
+import { motion, stagger } from "framer-motion";
 
 export const ServiceCard = ({
   image,
@@ -29,16 +29,23 @@ export const ServiceCard = ({
         y: 100,
         opacity: 0,
       }}
-      animate={{
+      whileInView={{
         y: 0,
         opacity: 1,
       }}
+      viewport={{
+        amount: "some",
+        once: false,
+      }}
       transition={{
-        duration: 1,
+        duration: 0.3,
+        delay: index * 0.3,
+        type: "spring",
+        // ease: [0.34, 1.56, 0.64, 1],
       }}
       onClick={() => setSelectedIndex(index)}
       className={cn(
-        "hover:grayscale-0 w-full rounded-xl p-6 md:h-60 min-h-64 grid grid-cols-6 cursor-pointer transition-all",
+        "hover:grayscale-0 drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:h-60 min-h-64 grid grid-cols-6 cursor-pointer transition-all",
         index === 0 || index === 3
           ? "bg-ocd-yellow text-black"
           : "bg-ocd-blue text-white",

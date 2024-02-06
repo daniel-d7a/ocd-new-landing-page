@@ -46,15 +46,13 @@ export const Hero = () => {
             className=" flex flex-col md:flex-row gap-2"
           >
             Market
-            <NeonText
+            <span
               className={cn(
-                "font-semibold border-4 rounded-full px-6 w-min -ml-4 md:ml-0 mb-10",
-                neon.className
+                "font-semibold bg-ocd-yellow rounded-full rotate-12 px-6 w-min mt-4 pb-2 -ml-4 md:ml-0 mb-10 text-black"
               )}
-              border
             >
-              Experts
-            </NeonText>
+              experts
+            </span>
           </motion.h1>
         </div>
       </div>

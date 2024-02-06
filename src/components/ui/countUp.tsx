@@ -16,10 +16,9 @@ export const Count = ({
   useEffect(() => {
     animate(0, end, {
       duration: 2,
-      ease: [0, 1, 0, 1.2],
+      ease: [0, 1, 0, 1.1],
       onUpdate: (x) => {
         setX(x);
-        console.log("x => ", x);
       },
       delay: delay ?? 2,
     });
