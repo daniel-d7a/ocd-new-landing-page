@@ -2,6 +2,7 @@ import "./globals.css";
 import { recoleta } from "@/lib/fonts";
 import { cn } from "@/lib/cn";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "OCD",
