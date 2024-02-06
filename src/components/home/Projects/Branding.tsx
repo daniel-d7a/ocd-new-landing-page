@@ -3,6 +3,7 @@ import { projects } from "./data";
 import { useScroll, useTransform } from "framer-motion";
 import { ElementRef, useRef } from "react";
 import { BrandingCard } from "@/components/ui/BrandingCard";
+import { isMobile as isMobileFunc } from "@/lib/utils";
 
 export const Branding = () => {
   const containerRef = useRef<ElementRef<"div">>(null);
@@ -13,7 +14,7 @@ export const Branding = () => {
     offset: ["start start", "end end"],
   });
 
-  const isMobile = window?.innerWidth <= 768;
+  let isMobile = isMobileFunc();
 
   const x = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 1200 : 4500]);
 

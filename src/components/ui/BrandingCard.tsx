@@ -4,6 +4,7 @@ import { MotionValue, motion, useTransform } from "framer-motion";
 import { cn } from "@/lib/cn";
 import { montserrat } from "@/lib/fonts";
 import { useEffect } from "react";
+import { isMobile as isMobileFunc } from "@/lib/utils";
 
 export function BrandingCard({
   i,
@@ -18,7 +19,7 @@ export function BrandingCard({
   name: string;
   x: MotionValue<number>;
 }) {
-  const isMobile = window?.innerWidth <= 768;
+  const isMobile = isMobileFunc();
 
   const start = isMobile ? 35 + i * 265 : 650 + 1000 * i;
   const end = isMobile ? start + 225 : start + 400;
