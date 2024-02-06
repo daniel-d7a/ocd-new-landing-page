@@ -25,18 +25,18 @@ export const ServiceCard = ({
 }) => {
   return (
     <motion.div
-      initial={{
-        y: 100,
-        opacity: 0,
-      }}
-      whileInView={{
-        y: 0,
-        opacity: 1,
-      }}
-      viewport={{
-        amount: "some",
-        once: false,
-      }}
+      // initial={{
+      //   y: 100,
+      //   opacity: 0,
+      // }}
+      // whileInView={{
+      //   y: 0,
+      //   opacity: 1,
+      // }}
+      // viewport={{
+      //   amount: "some",
+      //   once: false,
+      // }}
       transition={{
         duration: 0.3,
         delay: index * 0.3,
