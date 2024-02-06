@@ -7,11 +7,11 @@ import { AboutUs } from "@/components/home/AboutUs";
 export default function Home() {
   return (
     <main className="">
-      {/* <Hero /> */}
-      {/* <AboutUs /> */}
-      {/* <Services /> */}
+      <Hero />
+      <AboutUs />
+      <Services />
       <Projects />
-      {/* <Testmonials /> */}
+      <Testmonials />
     </main>
   );
 }
