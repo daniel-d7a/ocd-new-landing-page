@@ -55,14 +55,13 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const [showBtn, setShowBtn] = useState(false);
   const [progress, setProgress] = useState(0);
   const lenis = useLenis(({ scroll, progress }) => {
-    console.log("scroll => ", scroll);
     setShowBtn(scroll > 200);
     setProgress(progress);
   });
 
   return (
     <ReactLenis root>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.main
           ref={scope}
           className="fixed top-0 left-0 h-[100dvh] w-[100vw] animation-parent z-50 pointer-events-none"

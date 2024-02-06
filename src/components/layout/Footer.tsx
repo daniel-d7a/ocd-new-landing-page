@@ -1,11 +1,15 @@
-import { FaFacebookF, FaInstagram, FaBehance, FaChevronLeft } from "react-icons/fa6";
+"use client";
+
+import { FaFacebookF, FaInstagram, FaBehance } from "react-icons/fa6";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { ScrollButton } from "../ui/buttons/scroll button/ScrollButton";
 import { cn } from "@/lib/cn";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
+  const pathname = usePathname();
   return (
     <footer className="text-white flex flex-col-reverse md:grid md:grid-cols-2 px-4 md:px-16 pb-10 mt-10 bg-neutral-900 pt-10">
       <p className="md:hidden block text-neutral-300 mt-10">
@@ -66,39 +70,40 @@ export const Footer = () => {
           </a>
         </div>
       </div>
-
-      <div className="col-span-1 col-start-2 border-ocd-yellow border-4 rounded-2xl w-full p-4 pb-10">
-        <p className="text-xl">Hire Us</p>
-        <p className="text-3xl font-semibold mt-6">
-          Lets Create a project together ?
-        </p>
-        <div className="space-y-6">
-          <div className="grid w-full items-center gap-1.5 mt-6">
-            <Label htmlFor="email" className="text-lg">
-              Email
-            </Label>
-            <Input
-              className="bg-neutral-900 rounded-xl placeholder:text-neutral-300"
-              type="email"
-              id="email"
-              placeholder="Email"
-            />
+      {pathname !== "/Contact" && (
+        <div className="col-span-1 col-start-2 border-ocd-yellow border-4 rounded-2xl w-full p-4 pb-10">
+          <p className="text-xl">Hire Us</p>
+          <p className="text-3xl font-semibold mt-6">
+            Lets Create a project together ?
+          </p>
+          <div className="space-y-6">
+            <div className="grid w-full items-center gap-1.5 mt-6">
+              <Label htmlFor="email" className="text-lg">
+                Email
+              </Label>
+              <Input
+                className="bg-neutral-900 rounded-md border-neutral-500 placeholder:text-neutral-300"
+                type="email"
+                id="email"
+                placeholder="Email"
+              />
+            </div>
+            <div className="grid w-full gap-1.5">
+              <Label htmlFor="message" className="text-lg">
+                Your message
+              </Label>
+              <Textarea
+                className="bg-neutral-900 rounded-md border-neutral-500 placeholder:text-neutral-300"
+                placeholder="Type your message here."
+                id="message"
+              />
+            </div>
+            <ScrollButton className="font-semibold rounded-full w-full bg-ocd-blue text-xl py-4 border-4 border-ocd-blue">
+              Let&apos;s Collaborate!
+            </ScrollButton>
           </div>
-          <div className="grid w-full gap-1.5">
-            <Label htmlFor="message" className="text-lg">
-              Your message
-            </Label>
-            <Textarea
-              className="bg-neutral-900 rounded-xl placeholder:text-neutral-300"
-              placeholder="Type your message here."
-              id="message"
-            />
-          </div>
-          <ScrollButton className="font-semibold rounded-full w-full bg-ocd-blue text-xl py-4 border-4 border-ocd-blue">
-            Let&apos;s Collaborate!
-          </ScrollButton>
         </div>
-      </div>
+      )}
       <p className="hidden md:block col-span-2 text-neutral-300">
         © 2024. All rights reserved
       </p>
