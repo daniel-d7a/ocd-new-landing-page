@@ -1,7 +1,7 @@
 import { HoverButton } from "@/components/ui/buttons/hover button/HoverButton";
 import { cn } from "@/lib/cn";
 import { montserrat } from "@/lib/fonts";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export const DesignProject = ({
   name,
@@ -10,7 +10,7 @@ export const DesignProject = ({
 }: {
   name: string;
   text: string;
-  image: StaticImageData;
+  image: string;
 }) => {
   return (
     <div className="w-full">
@@ -34,12 +34,15 @@ export const DesignProject = ({
             Check it out{" "}
           </HoverButton>
         </div>
-        <Image
-          src={image}
-          alt={name}
-          height={280}
-          className="mt-2 rounded-xl"
-        />
+        <div className="rounded-xl overflow-hidden w-full h-full flex items-start">
+          <Image
+            src={image}
+            alt={name}
+            height={280}
+            width={280}
+            className="w-full"
+          />
+        </div>
       </div>
     </div>
   );

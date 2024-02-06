@@ -61,7 +61,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   return (
     <ReactLenis root>
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.main
           ref={scope}
           className="fixed top-0 left-0 h-[100dvh] w-[100vw] animation-parent z-50 pointer-events-none"
