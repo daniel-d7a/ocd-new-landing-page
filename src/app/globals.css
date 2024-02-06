@@ -18,3 +18,16 @@ body {
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes slideTransition {
+  0% {
+    transform: translateX(-100%);
+  }
+  50%,
+  55% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
