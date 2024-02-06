@@ -27,7 +27,7 @@ export const AboutUs = () => {
 
       <div
         className={cn(
-          "min-h-[400vh] px-2 md:px-20 flex flex-col md:flex-row text-white",
+          "min-h-[400vh] px-2 md:px-20 flex flex-col text-white",
           montserrat.className
         )}
       >

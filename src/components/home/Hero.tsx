@@ -59,7 +59,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="col-span-3 md:col-span-2 grid grid-cols-2 items-start md:flex md:flex-row md:items-center gap-8 md:gap-0 md:items-start justify-between md:pr-14 pt-0 md:pt-16">
+      <div className="col-span-3 md:col-span-2 grid grid-cols-2 items-start md:flex md:flex-row md:items-start gap-8 md:gap-0 justify-between md:pr-14 pt-0 md:pt-10">
         <Count end={40} text="succesful event" />
         <Count end={150} text="ad campaign" />
         <Count end={100} text="completed project" />
