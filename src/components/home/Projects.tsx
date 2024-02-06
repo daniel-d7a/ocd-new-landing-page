@@ -3,6 +3,7 @@ import { ElementRef, useEffect, useRef, useState } from "react";
 import { Branding } from "./Projects/Branding";
 import { Design } from "./Projects/Design";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { isMobile } from "@/lib/utils";
 
 export const Projects = () => {
   const [typeIndex, setTypeIndex] = useState(0);
@@ -30,10 +31,13 @@ export const Projects = () => {
     }
   });
 
+  const mobile = isMobile();
+  const scroll = mobile ? -135 : -170;
+
   const textScroll = useTransform(
     textPos,
     [0, 25, 35, 100],
-    [0, 0, -170, -170]
+    [0, 0, scroll, scroll]
   );
 
   return (
@@ -45,9 +49,13 @@ export const Projects = () => {
             width: !inView
               ? "0%"
               : typeIndex === 0
-              ? "12%"
+              ? mobile
+                ? "27%"
+                : "12%"
               : typeIndex === 1
-              ? "17%"
+              ? mobile
+                ? "37%"
+                : "17%"
               : "0%",
           }}
           className="mx-1 h-14 inline-block overflow-hidden transition-all"

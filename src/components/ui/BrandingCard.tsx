@@ -41,7 +41,7 @@ export function BrandingCard({
         <div className="w-40 p-2 pl-6 pr-6 md:pr-0 text-white bg-neutral-800 rounded-t-xl">
           Branding
         </div>
-        <div className="md:-ml-10 rounded-tr-md w-40 md:w-20 skew-x-[50deg] bg-neutral-800">
+        <div className="md:-ml-10 -ml-6 rounded-tr-md w-10 md:w-20 skew-x-[50deg] bg-neutral-800">
           {" "}
         </div>
       </div>
