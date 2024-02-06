@@ -35,25 +35,35 @@ export function BrandingCard({
       style={{
         left: `${i * (isMobile ? 35 : 45)}px`,
       }}
-      className="p-4 py-10 flex flex-col md:flex-row gap-10 flex-shrink-0 w-[75%] md:w-[89%] sticky bg-neutral-800 rounded-xl shadow-lg drop-shadow-lg"
+      className=" flex-shrink-0 w-[75%] md:w-[89%] sticky  rounded-xl shadow-lg drop-shadow-lg"
     >
-      <div className={cn("w-full md:w-3/5 ml-14")}>
-        <motion.p
-          style={{
-            rotate: isLast ? 0 : rotate,
-            x: isLast ? 0 : xPos,
-            scale: isLast ? 1 : scale,
-            originX: 0,
-            originY: 0.5,
-          }}
-          className="text-3xl font-semibold md:text-6xl mb-6 "
-        >
-          {name}
-        </motion.p>
-        <p className={cn("md:text-xl w-3/4", montserrat.className)}>{text}</p>
+      <div className="flex h-8 ">
+        <div className="w-40 p-2 pl-6 pr-6 md:pr-0 text-white bg-neutral-800 rounded-t-xl">
+          Branding
+        </div>
+        <div className="md:-ml-10 rounded-tr-md w-40 md:w-20 skew-x-[50deg] bg-neutral-800">
+          {" "}
+        </div>
       </div>
-      <div className="h-full overflow-hidden">
-        <Image width={400} height={400} src={image} alt={name} />
+      <div className="flex flex-col md:flex-row gap-10 bg-neutral-800 p-4 py-10 rounded-xl rounded-tl-none">
+        <div className={cn("w-full md:w-3/5 ml-14")}>
+          <motion.p
+            style={{
+              rotate: isLast ? 0 : rotate,
+              x: isLast ? 0 : xPos,
+              scale: isLast ? 1 : scale,
+              originX: 0,
+              originY: 0.5,
+            }}
+            className="text-3xl font-semibold md:text-6xl mb-6 "
+          >
+            {name}
+          </motion.p>
+          <p className={cn("md:text-xl w-3/4", montserrat.className)}>{text}</p>
+        </div>
+        <div className="h-full overflow-hidden">
+          <Image width={400} height={400} src={image} alt={name} />
+        </div>
       </div>
     </div>
   );
