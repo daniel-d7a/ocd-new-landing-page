@@ -18,19 +18,29 @@ export const NavBar = () => {
   const listItems = (
     <>
       <li>
-        <Link href="/">Home</Link>
+        <Link className="hover-underline-animation" href="/">
+          Home
+        </Link>
       </li>
       <li>
-        <Link href="/Projects">Projects</Link>
+        <Link className="hover-underline-animation" href="/Projects">
+          Projects
+        </Link>
       </li>
       <li>
-        <Link href="/Services">Services</Link>
+        <Link className="hover-underline-animation" href="/Services">
+          Services
+        </Link>
       </li>
       <li>
-        <Link href="/About">About</Link>
+        <Link className="hover-underline-animation" href="/About">
+          About
+        </Link>
       </li>
       <li>
-        <Link href="/Contact">Contact</Link>
+        <Link className="hover-underline-animation" href="/Contact">
+          Contact
+        </Link>
       </li>
     </>
   );

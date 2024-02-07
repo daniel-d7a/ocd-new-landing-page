@@ -2,24 +2,23 @@
 import { Footer } from "@/components/layout/Footer";
 import { NavBar } from "@/components/layout/NavBar";
 import { cn } from "@/lib/cn";
-import { stagger, useAnimate, motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { usePathname } from "next/navigation";
 import { BsFillTriangleFill } from "react-icons/bs";
+const positions = [
+  "top-0",
+  "top-[5dvh]",
+  "top-[25dvh]",
+  "top-[30dvh]",
+  "top-[50dvh]",
+  "top-[55dvh]",
+  "top-[75dvh]",
+  "top-[80dvh]",
+];
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-
-  const positions = [
-    "top-0",
-    "top-[5dvh]",
-    "top-[25dvh]",
-    "top-[30dvh]",
-    "top-[50dvh]",
-    "top-[55dvh]",
-    "top-[75dvh]",
-    "top-[80dvh]",
-  ];
 
   const [showBtn, setShowBtn] = useState(false);
   const [progress, setProgress] = useState(0);
