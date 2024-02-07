@@ -33,10 +33,10 @@ export default function RootLayout({
       );
       document.getElementById("ring")?.animate(
         {
-          left: `${pageX - 20}px`,
-          top: `${pageY - 45}px`,
+          left: `${pageX - 22}px`,
+          top: `${pageY - 47}px`,
         },
-        { duration: 700, fill: "forwards" }
+        { duration: 1000, fill: "forwards" }
       );
     }
   };
