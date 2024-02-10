@@ -50,7 +50,7 @@ export default function RootLayout({
         )}
       >
         {children}
-        <div
+        {/* <div
           id="ring"
           // ref={ringRef}
           className="hidden md:block size-10 rounded-full absolute top-0 left-0 bg-transparent border-2 border-ocd-blue pointer-events-none"
@@ -59,7 +59,7 @@ export default function RootLayout({
           id="dot"
           // ref={cursorRef}
           className="hidden md:block size-2 rounded-full absolute top-0 left-0 bg-ocd-yellow pointer-events-none"
-        />
+        /> */}
       </body>
     </html>
   );
