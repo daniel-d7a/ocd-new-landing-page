@@ -1,3 +1,5 @@
+"use client";
+
 import { ScrollButton } from "@/components/ui/buttons/scroll button/ScrollButton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -6,11 +8,26 @@ import { cn } from "@/lib/cn";
 import { montserrat } from "@/lib/fonts";
 
 export default function ContactUs() {
+  function sendEmail(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    const email = data.get("email") as string;
+    const message = data.get("message") as string;
+
+    const href = `mailto:ocdagencyy@gmail.com?subject=Let's work together!&from=${email}&body=${message}`;
+
+    if (typeof window !== "undefined") {
+      window.location.href = href;
+    }
+  }
+
   return (
     <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
           <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.7591845781726!2d31.2387975!3d30.043765899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840c7dd7c0881%3A0xa9d580a5ab604a39!2sGreek%20Campus!5e0!3m2!1sen!2seg!4v1707776623267!5m2!1sen!2seg"
             loading="lazy"
             width="100%"
             height="100%"
@@ -20,16 +37,18 @@ export default function ContactUs() {
             marginHeight={0}
             marginWidth={0}
             scrolling="no"
-            src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+            allowFullScreen={false}
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+
           <div className="bg-neutral-800 text-white relative flex flex-wrap py-6 rounded shadow-md">
             <div className="lg:w-1/2 px-6">
               <h2 className="title-font font-semibold  tracking-widest text-xs">
                 ADDRESS
               </h2>
               <p className={cn("mt-1", montserrat.className)}>
-                Photo booth tattooed prism, portland taiyaki hoodie neutra
-                typewriter
+                26VQ+GG3, Youssef El-Gendy, Ad Dawawin, Abdeen, Cairo
+                Governorate 4280102
               </p>
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
@@ -42,18 +61,21 @@ export default function ContactUs() {
                   montserrat.className
                 )}
               >
-                fady_hany@ocd.com
+                ocdagencyy@gmail.com
               </a>
               <h2 className="title-font font-semibold tracking-widest text-xs mt-4">
                 PHONE
               </h2>
               <p className={cn("leading-relaxed", montserrat.className)}>
-                +2 0105 193 7083
+                +20 127 792 4269
               </p>
             </div>
           </div>
         </div>
-        <div className="text-white bg-neutral-900 lg:w-2/5 md:w-1/2 flex flex-col md:ml-auto w-full px-4 border-4 border-ocd-yellow rounded-2xl py-8 mt-8 md:mt-0">
+        <form
+          onSubmit={sendEmail}
+          className="text-white bg-neutral-900 lg:w-2/5 md:w-1/2 flex flex-col md:ml-auto w-full px-4 border-4 border-ocd-yellow rounded-2xl py-8 mt-8 md:mt-0"
+        >
           <h2 className="text-3xl mb-1 font-medium title-font">Hire Us!</h2>
           <p className="leading-relaxed text-gray-300">
             Want to collaborate? we would love to. Send us a message and
@@ -67,7 +89,7 @@ export default function ContactUs() {
               <Input
                 className="bg-neutral-900 rounded-md border-neutral-500 placeholder:text-neutral-300"
                 type="email"
-                id="email"
+                name="email"
                 placeholder="Email"
               />
             </div>
@@ -78,14 +100,14 @@ export default function ContactUs() {
               <Textarea
                 className="bg-neutral-900 rounded-md border-neutral-500 placeholder:text-neutral-300"
                 placeholder="Type your message here."
-                id="message"
+                name="message"
               />
             </div>
             <ScrollButton className="font-semibold rounded-full w-full bg-ocd-blue text-xl py-4 border-4 border-ocd-blue">
               Let&apos;s Collaborate!
             </ScrollButton>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );
