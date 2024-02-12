@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction } from "react";
 import { RippleButton } from "@/components/ui/buttons/ripple button/RippleButton";
 import { IoMdArrowForward } from "react-icons/io";
 import { motion, stagger } from "framer-motion";
+import { ClassValue } from "clsx";
 
 const yellowIndecies = [0, 2, 4, 5];
 
@@ -23,30 +24,19 @@ export const ServiceCard = ({
   name,
   slogan,
   text,
-  index,
-  active,
-  setSelectedIndex,
+  classNames,
 }: {
   name: string;
   slogan: string;
   image: StaticImageData;
   text: string;
-  index: number;
-  active: boolean;
-  setSelectedIndex: Dispatch<SetStateAction<number>>;
+  classNames?: ClassValue[] | ClassValue;
 }) => {
   return (
-    <motion.div
-      onClick={() => setSelectedIndex(index)}
+    <div
       className={cn(
-        "hover:grayscale-0 row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
-        yellowIndecies.includes(index)
-          ? "md:bg-ocd-yellow md:text-black"
-          : "md:bg-ocd-blue md:text-white",
-        index % 2 === 0 ? "bg-ocd-blue text-white" : "bg-ocd-yellow text-black",
-        montserrat.className,
-        !active && "grayscale",
-        styles[index]
+        "hover:grayscale-0 grayscale row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
+        classNames
       )}
     >
       <div className="col-span-6 md:col-span-4">
@@ -73,6 +63,6 @@ export const ServiceCard = ({
           </div>
         </RippleButton>
       </div> */}
-    </motion.div>
+    </div>
   );
 };

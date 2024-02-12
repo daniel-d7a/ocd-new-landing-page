@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/cn";
-import { montserrat } from "@/lib/fonts";
+import { montserrat, recoleta } from "@/lib/fonts";
 import { ServiceCard } from "./atoms/ServiceCard";
 import laptop from "@/assets/laptop.png";
 import writing from "@/assets/writing.png";
@@ -9,12 +9,36 @@ import abstract from "@/assets/abstract.png";
 import social from "@/assets/social-icons.png";
 import { ElementRef, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { ClassValue } from "clsx";
 
 export const Services = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const socialMediaSectionRef = useRef<ElementRef<"div">>(null);
   const socialMediaInView = useInView(socialMediaSectionRef, { amount: 0.2 });
+
+  const mediaProductionSectionRef = useRef<ElementRef<"div">>(null);
+  const mediaProductionInView = useInView(mediaProductionSectionRef, {
+    amount: 0.2,
+  });
+
+  const yellowIndecies = [0, 2, 4, 5];
+
+  const styles = [
+    "col-span-2 col-start-1 row-start-1",
+    "col-span-4 col-start-3 row-start-1",
+    "col-span-2 col-start-7 row-start-1",
+    "col-span-3 col-start-1 row-start-2",
+    "col-span-5 col-start-4 row-start-2",
+    "col-span-5 col-start-1 row-start-3",
+    "col-span-3 col-start-6 row-start-3",
+  ];
+
+  const mediaProductionStyles = [
+    "col-span-2 row-start-1 row-span-2 bg-ocd-yellow ",
+    "col-span-6 row-start-1 row-span-1 col-start-3 bg-ocd-yellow ",
+    "col-span-6 row-start-2 row-span-1 col-start-3 bg-ocd-yellow ",
+  ] as ClassValue[];
 
   return (
     <motion.section
@@ -27,7 +51,7 @@ export const Services = () => {
         document.querySelector("body")!.style.backgroundColor = "#000000";
         document.querySelector("body")!.style.color = "#FFFFFF";
       }}
-      className="px-6 md:px-16 py-10"
+      className="px-6 md:px-16 py-10 w-screen"
     >
       <p className="text-4xl md:text-5xl font-semibold text-center">
         What do we offer?
@@ -48,13 +72,98 @@ export const Services = () => {
 
           {Social_Media_Management.map((service, i) => (
             <ServiceCard
-              setSelectedIndex={setSelectedIndex}
               key={service.name}
               {...service}
-              index={i}
-              active={i === selectedIndex}
+              classNames={[
+                yellowIndecies.includes(i)
+                  ? "md:bg-ocd-yellow md:text-black"
+                  : "md:bg-ocd-blue md:text-white",
+                i % 2 === 0
+                  ? "bg-ocd-blue text-white"
+                  : "bg-ocd-yellow text-black",
+                montserrat.className,
+                styles[i],
+              ]}
             />
           ))}
+        </div>
+
+        <div ref={mediaProductionSectionRef} className="mt-10">
+          <div
+            className={cn(
+              "fixed top-1/2 z-10  bg-ocd-blue rounded-b-2xl text-white -rotate-90 p-2 transition-all",
+              mediaProductionInView ? "-left-14" : "-left-52"
+            )}
+          >
+            Media Production
+          </div>
+          <div
+            className={cn(
+              "hover:grayscale-0 bg-ocd-blue text-white row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
+              montserrat.className
+            )}
+          >
+            <div className="col-span-6 md:col-span-4">
+              <p className={cn("text-3xl font-bold mb-4", recoleta.className)}>
+                {Media_Production[0].name}
+              </p>
+              <p className="font-medium">{Media_Production[0].text}</p>
+            </div>
+            <p
+              className={cn("font-semibold text-lg mt-4", montserrat.className)}
+            >
+              Covering:
+            </p>
+            <div className="flex flex-col md:flex-row mt-4 gap-4">
+              <div
+                className={cn(
+                  "hover:grayscale-0 grayscale bg-ocd-yellow text-black row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
+                  montserrat.className
+                )}
+              >
+                <div className="col-span-6 md:col-span-4">
+                  <p
+                    className={cn(
+                      "text-3xl font-bold mb-4",
+                      recoleta.className
+                    )}
+                  >
+                    {Media_Production[1].name}
+                  </p>
+                  <p className="font-medium">{Media_Production[1].text}</p>
+                </div>
+              </div>
+              <div
+                className={cn(
+                  "hover:grayscale-0 grayscale bg-ocd-yellow text-black row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
+                  montserrat.className
+                )}
+              >
+                <div className="col-span-6 md:col-span-4">
+                  <p
+                    className={cn(
+                      "text-3xl font-bold mb-4",
+                      recoleta.className
+                    )}
+                  >
+                    {Media_Production[2].name}
+                  </p>
+                  <p className="font-medium">{Media_Production[2].text}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row  mt-6 gap-4">
+            {Media_Production.slice(3).map((service, i) => (
+              <ServiceCard
+                key={service.name}
+                {...service}
+                classNames={["bg-ocd-yellow text-black"]}
+                // classNames={mediaProductionStyles[i]}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>
@@ -106,6 +215,7 @@ const Social_Media_Management = [
     text: "With love for images, the skill of using the appropriate word, and creativity of expression, we help you design the best designs for your pages. By professional graphic designers who use professional tools. We produce graphic designs of the highest quality that accurately support our strategic plan in marketing the brand.",
   },
 ];
+
 const Media_Production = [
   {
     name: "Event Organizing",

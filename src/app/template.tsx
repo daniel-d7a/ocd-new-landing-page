@@ -47,7 +47,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
                   positions[i]
                 )}
                 style={{
-                  transform: "translateX(-110vw)",
+                  transform: "translateX(-115vw)",
                   animation:
                     "slideTransition 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
                   animationDelay: `${i * 0.05}s`,

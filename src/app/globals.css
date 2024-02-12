@@ -26,14 +26,14 @@ body {
 
 @keyframes slideTransition {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-115%);
   }
   50%,
   55% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(115%);
   }
 }
 
