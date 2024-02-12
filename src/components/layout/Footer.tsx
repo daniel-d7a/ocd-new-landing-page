@@ -43,8 +43,8 @@ export const Footer = () => {
           </div>
         </div>
         <div className="my-8">
-          <p>+2 0105 193 7083</p>
-          <p>fady_hany@ocd.com</p>
+          <p>+20 127 792 4269</p>
+          <p>ocdagencyy@gmail.com</p>
         </div>
         <div className="flex gap-4">
           <a
@@ -62,7 +62,7 @@ export const Footer = () => {
             <FaInstagram size={30} />
           </a>
           <a
-            href="https://www.instagram.com/ocd_digital_marketing_agency/"
+            href="https://www.behance.net/ocddigitalmarketing"
             target="_blank"
             rel="noreferrer"
           >
