@@ -5,6 +5,7 @@ import { cn } from "@/lib/cn";
 import { montserrat } from "@/lib/fonts";
 import { useEffect } from "react";
 import { isMobile as isMobileFunc } from "@/lib/utils";
+import Link from "next/link";
 
 export function BrandingCard({
   i,
@@ -31,7 +32,8 @@ export function BrandingCard({
   const scale = useTransform(x, [start, end], [1, isMobile ? 0.6 : 0.4]);
 
   return (
-    <div
+    <Link
+      href={`/Projects/${name}`}
       style={{
         left: `${i * (isMobile ? 35 : 45)}px`,
       }}
@@ -65,6 +67,6 @@ export function BrandingCard({
           <Image width={400} height={400} src={image} alt={name} />
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

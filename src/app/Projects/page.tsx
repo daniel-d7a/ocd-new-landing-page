@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdArrowOutward } from "react-icons/md";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function Projects() {
   const flairRef = useRef<HTMLDivElement>(null);
@@ -98,7 +99,8 @@ const ProjectPageCard = ({
   setIsVisible: (a: boolean) => void;
 }) => {
   return (
-    <div
+    <Link
+      href={`/Projects/${name}`}
       className="w-full overflow-hidden cursor-pointer"
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
@@ -183,7 +185,7 @@ const ProjectPageCard = ({
           {text}
         </div>
       </motion.div>
-    </div>
+    </Link>
   );
 };
 

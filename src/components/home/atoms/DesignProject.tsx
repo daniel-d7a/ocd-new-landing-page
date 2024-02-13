@@ -2,6 +2,7 @@ import { HoverButton } from "@/components/ui/buttons/hover button/HoverButton";
 import { cn } from "@/lib/cn";
 import { montserrat } from "@/lib/fonts";
 import Image from "next/image";
+import Link from "next/link";
 
 export const DesignProject = ({
   name,
@@ -13,7 +14,7 @@ export const DesignProject = ({
   image: string;
 }) => {
   return (
-    <div className="w-full">
+    <Link href={`/Projects/${name}`} className="w-full">
       <div className="flex h-8 ">
         <div className="w-40 p-2 pl-6 pr-6 md:pr-0 text-white bg-neutral-700 rounded-t-xl">
           Design
@@ -44,6 +45,6 @@ export const DesignProject = ({
           />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
