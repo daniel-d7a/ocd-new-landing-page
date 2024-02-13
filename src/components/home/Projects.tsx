@@ -50,11 +50,11 @@ export const Projects = () => {
               ? "0%"
               : typeIndex === 0
               ? mobile
-                ? "27%"
+                ? "31%"
                 : "12%"
               : typeIndex === 1
               ? mobile
-                ? "37%"
+                ? "42%"
                 : "17%"
               : "0%",
           }}

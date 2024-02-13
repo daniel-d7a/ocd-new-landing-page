@@ -236,7 +236,7 @@ const Media_Production = [
     text: "We believe in the impact that reels have had on digital marketing recently. So, we make every moment of your story a video for your audience. The videography service does not stop here only, but extends to what is the industry of advertisements, ideas, interviews, consumer reviews, live videography, and others. You and your requirements and we are at your service.",
   },
   {
-    name: "Copywriting/Scriptwriting",
+    name: "Copywriting / Scriptwriting",
     slogan: "Igniting Brands in the Social Sphere.",
     image: social,
     text: "The idea needs someone to develop and market it in a creative and professional way in a written and drawn script and artistic sequence to meet the objectives of the advertisement or film. We provide skilled minds have real talent and great skill in writing scripts and Copywriting advertisements that suit the client’s goals and market conditions.",
