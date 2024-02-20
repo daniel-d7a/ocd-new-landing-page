@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 * {
-  /* cursor: none; */
+  cursor: none;
 }
 
 body {
-  /* cursor: none; */
+  cursor: none;
   background-color: #000000;
   color: #ffffff;
   transition: all 0.5s ease;
@@ -22,19 +22,6 @@ body {
 
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
-}
-
-@keyframes slideTransition {
-  0% {
-    transform: translateX(-115%);
-  }
-  50%,
-  55% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(115%);
-  }
 }
 
 .hover-underline-animation {

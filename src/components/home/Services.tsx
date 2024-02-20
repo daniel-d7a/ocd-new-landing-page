@@ -11,6 +11,10 @@ import { ElementRef, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { ClassValue } from "clsx";
 
+import Image from "next/image";
+import cam1 from "@/assets/cam1.png";
+import cam2 from "@/assets/cam2.png";
+
 export const Services = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -51,120 +55,93 @@ export const Services = () => {
         document.querySelector("body")!.style.backgroundColor = "#000000";
         document.querySelector("body")!.style.color = "#FFFFFF";
       }}
-      className="px-6 md:px-16 py-10 w-screen"
+      className="px-6 md:px-16 py-10 md:mb-40 mt-60 md:w-screen "
     >
       <p className="text-4xl md:text-5xl font-semibold text-center">
         What do we offer?
       </p>
-      <div className="mt-6">
-        <div
-          ref={socialMediaSectionRef}
-          className="flex flex-col md:grid md:grid-cols-8 justify-center gap-4"
-        >
-          <div
-            className={cn(
-              "fixed top-1/2 z-10  bg-ocd-blue rounded-b-2xl text-white -rotate-90 p-2 transition-all",
-              socialMediaInView ? "-left-20" : "-left-52"
-            )}
-          >
-            Social media managment
-          </div>
-
-          {Social_Media_Management.map((service, i) => (
-            <ServiceCard
-              key={service.name}
-              {...service}
-              classNames={[
-                yellowIndecies.includes(i)
-                  ? "md:bg-ocd-yellow md:text-black"
-                  : "md:bg-ocd-blue md:text-white",
-                i % 2 === 0
-                  ? "bg-ocd-blue text-white"
-                  : "bg-ocd-yellow text-black",
-                montserrat.className,
-                styles[i],
-              ]}
-            />
-          ))}
-        </div>
-
-        <div ref={mediaProductionSectionRef} className="mt-10">
-          <div
-            className={cn(
-              "fixed top-1/2 z-10  bg-ocd-blue rounded-b-2xl text-white -rotate-90 p-2 transition-all",
-              mediaProductionInView ? "-left-14" : "-left-52"
-            )}
-          >
-            Media Production
-          </div>
-          <div
-            className={cn(
-              "hover:grayscale-0 bg-ocd-blue text-white row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
-              montserrat.className
-            )}
-          >
-            <div className="col-span-6 md:col-span-4">
-              <p className={cn("text-3xl font-bold mb-4", recoleta.className)}>
-                {Media_Production[0].name}
-              </p>
-              <p className="font-medium">{Media_Production[0].text}</p>
-            </div>
-            <p
-              className={cn("font-semibold text-lg mt-4", montserrat.className)}
-            >
-              Covering:
-            </p>
-            <div className="flex flex-col md:flex-row mt-4 gap-4">
+      <div className="hidden md:block">
+        <div className="gap-4 grid grid-cols-3  text-white mt-96">
+          {Array(3)
+            .fill("")
+            .map((i) => (
               <div
-                className={cn(
-                  "hover:grayscale-0 grayscale bg-ocd-yellow text-black row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
-                  montserrat.className
-                )}
+                key={i}
+                className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl"
               >
-                <div className="col-span-6 md:col-span-4">
-                  <p
-                    className={cn(
-                      "text-3xl font-bold mb-4",
-                      recoleta.className
-                    )}
-                  >
-                    {Media_Production[1].name}
-                  </p>
-                  <p className="font-medium">{Media_Production[1].text}</p>
+                <div className="flex">
+                  <Image
+                    className="relative w-10/12 left-[40%] -translate-x-2/3 -translate-y-12"
+                    src={cam1}
+                    alt="cam1"
+                    // width={400}
+                  />
+                  <Image
+                    className="absolute w-5/12 -translate-x-4 -translate-y-6"
+                    src={cam2}
+                    alt="cam1"
+                    // width={750}
+                  />
                 </div>
+                <p className="text-4xl text-center font-semibold">
+                  Media Production
+                </p>
               </div>
-              <div
-                className={cn(
-                  "hover:grayscale-0 grayscale bg-ocd-yellow text-black row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
-                  montserrat.className
-                )}
-              >
-                <div className="col-span-6 md:col-span-4">
-                  <p
-                    className={cn(
-                      "text-3xl font-bold mb-4",
-                      recoleta.className
-                    )}
-                  >
-                    {Media_Production[2].name}
-                  </p>
-                  <p className="font-medium">{Media_Production[2].text}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row  mt-6 gap-4">
-            {Media_Production.slice(3).map((service, i) => (
-              <ServiceCard
-                key={service.name}
-                {...service}
-                classNames={["bg-ocd-yellow text-black"]}
-                // classNames={mediaProductionStyles[i]}
-              />
             ))}
-          </div>
         </div>
+        <div className="gap-4 grid grid-cols-3  text-white mt-60 2xl:mt-96">
+          {Array(3)
+            .fill("")
+            .map((i) => (
+              <div
+                key={i}
+                className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl"
+              >
+                <div className="flex">
+                  <Image
+                    className="relative w-10/12 left-[40%] -translate-x-2/3 -translate-y-12"
+                    src={cam1}
+                    alt="cam1"
+                    // width={400}
+                  />
+                  <Image
+                    className="absolute w-5/12 -translate-x-4 -translate-y-6"
+                    src={cam2}
+                    alt="cam1"
+                    // width={750}
+                  />
+                </div>
+                <p className="text-4xl text-center font-semibold">
+                  Media Production
+                </p>
+              </div>
+            ))}
+        </div>
+      </div>
+
+      <div className=" md:hidden block mt-[65vw] text-white space-y-[60vw]">
+        {Array(6)
+          .fill("")
+          .map((_, i) => (
+            <div
+              key={i}
+              className="flex flex-col justify-end bg-neutral-800 h-52 p-6 w-full rounded-xl"
+            >
+              <div className="flex relative">
+                <Image
+                  className="relative w-10/12 left-[40%] -translate-x-2/3 -translate-y-4"
+                  src={cam1}
+                  alt="cam1"
+                />
+                <div className="w-1/2 h-full absolute right-[2vw] top-[24vw] overflow-x-clip">
+                  <Image className=" scale-[3.2]" src={cam2} alt="cam1" />
+                </div>
+              </div>
+              <p className="text-4xl text-center font-semibold">
+                Media Production
+              </p>
+            </div>
+          ))}
       </div>
     </motion.section>
   );
@@ -254,3 +231,126 @@ const Media_Production = [
     text: "Professional editing of films and advertisements by the most skilled editors, using the most professional programs and with an artistic eye.",
   },
 ];
+{
+  /* 
+      <p className="text-4xl md:text-5xl font-semibold text-center">
+        What do we offer?
+      </p>
+      <div className="mt-6">
+        <div
+          ref={socialMediaSectionRef}
+          className="flex flex-col md:grid md:grid-cols-8 justify-center gap-4"
+        >
+          <div
+            className={cn(
+              "fixed top-1/2 z-10  bg-ocd-blue rounded-b-2xl text-white -rotate-90 p-2 transition-all",
+              socialMediaInView ? "-left-20" : "-left-52"
+            )}
+          >
+            Social media managment
+          </div>
+
+          {Social_Media_Management.map((service, i) => (
+            <ServiceCard
+              key={service.name}
+              {...service}
+              classNames={[
+                yellowIndecies.includes(i)
+                  ? "md:bg-ocd-yellow md:text-black"
+                  : "md:bg-ocd-blue md:text-white",
+                i % 2 === 0
+                  ? "bg-ocd-blue text-white"
+                  : "bg-ocd-yellow text-black",
+                montserrat.className,
+                styles[i],
+              ]}
+            />
+          ))}
+        </div>
+
+        <div ref={mediaProductionSectionRef} className="mt-10">
+          <div
+            className={cn(
+              "fixed top-1/2 z-10  bg-ocd-blue rounded-b-2xl text-white -rotate-90 p-2 transition-all",
+              mediaProductionInView ? "-left-14" : "-left-52"
+            )}
+          >
+            Media Production
+          </div>
+          <div
+            className={cn(
+              "hover:grayscale-0 bg-ocd-blue text-white row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
+              montserrat.className
+            )}
+          >
+            <div className="col-span-6 md:col-span-4">
+              <p className={cn("text-3xl font-bold mb-4", recoleta.className)}>
+                {Media_Production[0].name}
+              </p>
+              <p className="font-medium">{Media_Production[0].text}</p>
+            </div>
+            <p
+              className={cn("font-semibold text-lg mt-4", montserrat.className)}
+            >
+              Covering:
+            </p>
+            <div className="flex flex-col md:flex-row flex-wrap mt-4 gap-4">
+              <div className="flex gap-4">
+                <div
+                  className={cn(
+                    "hover:grayscale-0 grayscale bg-ocd-yellow text-black row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
+                    montserrat.className
+                  )}
+                >
+                  <div className="col-span-6 md:col-span-4">
+                    <p
+                      className={cn(
+                        "text-3xl font-bold mb-4",
+                        recoleta.className
+                      )}
+                    >
+                      {Media_Production[1].name}
+                    </p>
+                    <p className="font-medium">{Media_Production[1].text}</p>
+                  </div>
+                </div>
+                <div
+                  className={cn(
+                    "hover:grayscale-0 grayscale bg-ocd-yellow text-black row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
+                    montserrat.className
+                  )}
+                >
+                  <div className="col-span-6 md:col-span-4">
+                    <p
+                      className={cn(
+                        "text-3xl font-bold mb-4",
+                        recoleta.className
+                      )}
+                    >
+                      {Media_Production[2].name}
+                    </p>
+                    <p className="font-medium">{Media_Production[2].text}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <ServiceCard
+                  {...Media_Production[3]}
+                  classNames={["bg-ocd-yellow text-black"]}
+                />
+                <div className="flex flex-col gap-4">
+                  <ServiceCard
+                    {...Media_Production[4]}
+                    classNames={["bg-ocd-yellow text-black"]}
+                  />
+                  <ServiceCard
+                    {...Media_Production[5]}
+                    classNames={["bg-ocd-yellow text-black"]}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */
+}

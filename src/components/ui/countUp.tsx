@@ -17,19 +17,19 @@ export const Count = ({
     animate(0, end, {
       duration: 2,
       ease: [0, 1, 0, 1.1],
-      onUpdate: (x) => {
-        setX(x);
-      },
+      onUpdate: setX,
       delay: delay ?? 2,
     });
   }, [delay, end]);
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <span className="text-ocd-yellow text-5xl font-normal">
+      <span className="text-ocd-yellow text-6xl md:text-7xl font-normal">
         {x.toFixed(0)}+
       </span>
-      <p className="text-2xl font-normal w-full text-center">{text}</p>
+      <p className="text-3xl md:text-4xl font-normal w-full text-center">
+        {text}
+      </p>
     </div>
   );
 };

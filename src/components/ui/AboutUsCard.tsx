@@ -32,7 +32,7 @@ export const Card = ({
   const imagePosition = useTransform(
     parentYProgress,
     [startUp, endUp, startDown, endDown],
-    [500, 0, 0, -500]
+    [700, 0, 0, -700]
   );
 
   return (

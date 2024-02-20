@@ -1,0 +1,55 @@
+@keyframes slideTransition {
+  0% {
+    top: 100dvh;
+  }
+  43.75%,
+  56.25% {
+    top: -300px;
+  }
+  100% {
+    top: -200dvh;
+  }
+}
+
+@keyframes textSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  43.75%,
+  56.25% {
+    opacity: 1;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.textSlideUpAnimation {
+  position: fixed;
+  inset: 0px;
+  width: 16rem;
+  height: 5rem;
+  max-width: 100vw;
+  max-height: 100dvh;
+  margin: auto;
+  font-size: 4rem;
+  z-index: 60;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+  animation: textSlideUp 0.7s ease-in-out forwards;
+}
+
+.svg {
+  position: fixed;
+  height: calc(100dvh + 600px);
+  width: 100vw;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  animation: slideTransition 0.7s ease-in-out forwards;
+}

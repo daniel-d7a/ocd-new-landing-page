@@ -1,113 +1,148 @@
 "use client";
 
 import { cn } from "@/lib/cn";
-import { montserrat, neon } from "@/lib/fonts";
-import Image from "next/image";
-import megaphone from "@/assets/megaphone2.png";
 import { Count } from "../ui/countUp";
 import { motion } from "framer-motion";
-import lightning from "@/assets/lightning.png";
-import { NeonText } from "../ui/NeonText";
-import { useRef } from "react";
+import { ClassValue } from "clsx";
 
 export const Hero = () => {
-  const textRef = useRef<HTMLDivElement>(null);
-
   return (
-    <section className="min-h-screen px-6 md:mx-16 mt-16 mb-10 grid grid-cols-3 grid-rows-2 md:justify-normal">
-      <div className="flex flex-col items-center justify-center md:block text-7xl md:text-8xl font-semibold md:space-y-4 col-span-3 md:col-span-2">
-        <div className="w-min md:w-full overflow-y-hidden">
-          <motion.h1
-            initial={{ y: 200 }}
-            animate={{ y: 0 }}
-            transition={{
-              ease: "easeOut",
-              type: "just",
-              duration: 1,
-              delay: 1,
-            }}
-          >
-            Design, Develop,
-          </motion.h1>
+    <section className="min-h-screen px-6 md:mx-16 mt-16 mb-32 md:justify-normal">
+      <div className="flex flex-col items-center justify-start md:block text-7xl md:text-[9rem] font-semibold md:space-y-4 h-96">
+        <div className="w-full hidden md:block">
+          <FlipText
+            text="Design, Develop"
+            className=" md:w-[66rem] w-fit mx-auto"
+          />
+          <div className="flex justify-center">
+            <FlipText text="Market" delay={0.8} className="md:w-[31rem]" />
+            <YellowCapsule />
+          </div>
         </div>
-        <div ref={textRef} className="w-min md:w-full overflow-y-hidden pb-8">
-          <motion.h1
-            initial={{ y: 240 }}
-            animate={{ y: 0 }}
-            onAnimationComplete={() => {
-              textRef.current!.style.overflowY = "visible";
-            }}
-            transition={{
-              delay: 1.5,
-              ease: "easeOut",
-              type: "just",
-              duration: 1,
-            }}
-            className=" flex flex-col md:flex-row gap-2"
-          >
-            Market
-            <span
-              className={cn(
-                "font-semibold bg-ocd-yellow rounded-full rotate-12 px-6 w-min mt-4 pb-2 -ml-4 md:ml-0 mb-10 text-black"
-              )}
-            >
-              experts
-            </span>
-          </motion.h1>
+        <div className="md:hidden block w-full">
+          <FlipText text="Design," className="" />
+          <FlipText text="Develop" className="" delay={0.3} />
+          <FlipText text="Market" className="" delay={0.6} />
+          <YellowCapsule />
         </div>
       </div>
 
-      <div className="col-span-3 md:col-span-2 grid grid-cols-2 items-start md:flex md:flex-row md:items-start gap-8 md:gap-0 justify-between md:pr-14 pt-0 md:pt-10">
-        <Count end={40} text="succesful event" />
-        <Count end={150} text="ad campaign" />
+      <div className="md:flex md:flex-row md:items-start justify-evenly md:space-y-0 space-y-10 md:pr-14 pt-0 md:pt-20">
+        <Count end={150} text="team members" />
         <Count end={100} text="completed project" />
         <Count end={20} text="satisfied client" />
       </div>
-
-      <div className="col-span-3 md:col-span-1 md:row-span-2 md:row-start-1 md:col-start-3 mt-6">
-        <div className="w-full overflow-x-hidden">
-          <motion.p
-            transition={{
-              delay: 1.5,
-              ease: "easeOut",
-              type: "just",
-              duration: 1,
-            }}
-            initial={{ x: -400 }}
-            animate={{ x: 0 }}
-            className={cn("text-xl", montserrat.className)}
-          >
-            We design, develop and market for companies who aspire to be #1 in
-            thier industry
-          </motion.p>
-        </div>
-        <div className="w-fit overflow-hidden">
-          <motion.div
-            initial={{ rotateZ: 20 }}
-            animate={{ rotateZ: -20 }}
-            transition={{
-              duration: 0.001,
-              delay: 1.5,
-              repeat: Infinity,
-              repeatType: "reverse",
-              repeatDelay: 1.8,
-            }}
-          >
-            <motion.div
-              initial={{ opacity: 0, scaleX: -1.2, scaleY: 1.2 }}
-              animate={{ opacity: 1, scaleX: -1, scaleY: 1 }}
-              transition={{
-                ease: "anticipate",
-                duration: 0.7,
-                delay: 1.5,
-              }}
-              className="w-[150%] md:w-[200%] -ml-[60%] md:-ml-[100%] md:mt-10 relative"
-            >
-              <Image className="-scale-x-100" src={megaphone} alt="megaphone" />
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
     </section>
+  );
+};
+
+const FlipText = ({
+  text,
+  className,
+  delay = 0,
+}: {
+  text: string;
+  delay?: number;
+  className?: ClassValue | ClassValue[];
+}) => {
+  const letters = (top: boolean) =>
+    text.split("").map((letter, i) => {
+      return letter !== " " ? (
+        <motion.div
+          initial={{
+            y: top ? 0 : 200,
+          }}
+          animate={{
+            y: top ? -200 : 0,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: i * 0.05 + 1 + delay || 0,
+            ease: [0.83, 0, 0.17, 1],
+            repeat: Infinity,
+            // repeatType: "reverse",
+            repeatDelay: 2.5,
+          }}
+          key={`${letter}${i} ${Math.random()}`}
+        >
+          {letter}
+        </motion.div>
+      ) : (
+        <span className="size-4" key={`${letter}${i} ${Math.random()}`}></span>
+      );
+    });
+
+  return (
+    <div className={cn("relative h-20 md:h-40", className)}>
+      <motion.div className="absolute flex overflow-hidden top-0 left-0 ">
+        {letters(true)}
+      </motion.div>
+      <motion.div className="absolute flex overflow-hidden top-0 left-0">
+        {letters(false)}
+      </motion.div>
+    </div>
+  );
+};
+
+const YellowCapsule = () => {
+  return (
+    <div className="rotate-12 md:w-[34rem] hover:rotate-0 transition-all hover:mt-0 origin-left">
+      <div className="relative h-20 md:h-40 overflow-y-hidden">
+        <motion.div
+          initial={{
+            y: 300,
+          }}
+          animate={{
+            y: 0,
+          }}
+          transition={{
+            delay: 3,
+            ease: [0.76, 0, 0.24, 1],
+            duration: 1,
+            repeat: Infinity,
+            // repeatType: "reverse",
+            repeatDelay: 1.5,
+          }}
+          className={cn(
+            "absolute top-0 left-3 md:left-0 font-semibold md:px-6 w-min mb-10 text-black"
+          )}
+        >
+          experts
+        </motion.div>
+        <motion.div
+          initial={{
+            y: 0,
+          }}
+          animate={{
+            y: -300,
+          }}
+          transition={{
+            delay: 3,
+            ease: [0.76, 0, 0.24, 1],
+            duration: 1,
+            repeat: Infinity,
+            // repeatType: "reverse",
+            repeatDelay: 1.5,
+          }}
+          className={cn(
+            "absolute top-0 left-3 md:left-0 font-semibold md:px-6 w-min mb-10 text-black"
+          )}
+        >
+          experts
+        </motion.div>
+      </div>
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{
+          width: "100%",
+        }}
+        transition={{
+          delay: 2.5,
+          ease: [0.22, 1, 0.36, 1],
+          duration: 1,
+        }}
+        className="absolute bg-ocd-yellow h-20 md:h-40 top-0 left-0 -z-10 rounded-full"
+      />
+    </div>
   );
 };

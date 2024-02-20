@@ -35,7 +35,7 @@ export const ServiceCard = ({
   return (
     <div
       className={cn(
-        "hover:grayscale-0 grayscale row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
+        "hover:grayscale-0 grayscale row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-40 min-h-64  cursor-pointer transition-all",
         classNames
       )}
     >

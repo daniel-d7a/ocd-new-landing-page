@@ -31,36 +31,25 @@ export const Footer = () => {
         © 2024. All rights reserved
       </p>
       <div className="col-span-1 flex-col flex justify-between py-4 h-[520px] md:h-auto md:mt-0 mt-10">
-        <p className="text-xl">Contact</p>
         <div className="text-xl">
-          <p className="text-4xl">We </p>
-          <div className="text-6xl relative font-semibold flex">
-            <div
-              className={cn(
-                "bg-gradient-to-b from-ocd-yellow to-ocd-blue bg-clip-text text-transparent font-bold"
-              )}
-            >
-              <p>O</p>
-              <p>C</p>
-              <p>D</p>
+          <p className="text-6xl md:text-7xl font-semibold">We</p>
+          <div className="font-semibold flex flex-col text-5xl md:text-7xl">
+            <div className="flex items-baseline">
+              <span className="text-7xl md:text-8xl">O</span> <p>nly</p>
             </div>
-            <div className="">
-              <div className="flex">
-                <p>nly</p>
-              </div>
-              <div className="flex">
-                <p>reate</p>
-              </div>
-              <div className="flex">
-                <p>ifference.</p>
-              </div>
+            <div className="flex items-baseline">
+              <span className="text-7xl md:text-8xl">C</span> <p>reate</p>
+            </div>
+            <div className="flex items-baseline">
+              <span className="text-7xl md:text-8xl">D</span>
+              <p>ifference.</p>
             </div>
           </div>
         </div>
-        <div className="my-8">
+        {/* <div className="my-8">
           <p>+20 127 792 4269</p>
           <p>ocdagencyy@gmail.com</p>
-        </div>
+        </div> */}
         <div className="flex gap-4">
           <a
             href="https://www.facebook.com/OCD.Digital.Marketing"

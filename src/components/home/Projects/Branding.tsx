@@ -34,7 +34,7 @@ export const Branding = () => {
     <section ref={parentRef} className="h-[200dvh] md:h-[300dvh]">
       <div
         ref={containerRef}
-        className="w-full gap-10 md:gap-4 top-0 left-0 sticky border-4 mx-auto h-[100dvh] md:h-[95dvh] p-2 pt-10 md:p-10 flex overflow-x-scroll no-visible-scrollbar"
+        className="w-full gap-10 md:gap-4 top-0 left-0 sticky mx-auto h-[100dvh] md:h-[95dvh] p-2 pt-10 md:p-10 flex overflow-x-scroll no-visible-scrollbar"
       >
         {projects.slice(0, 4).map((project, i) => (
           <BrandingCard key={i} {...project} i={i} x={x} />

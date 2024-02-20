@@ -16,7 +16,10 @@ export const AboutUs = () => {
   });
 
   return (
-    <section ref={sectionRef} className={cn("py-6 px-6 md:px-16 md:-mt-24 ")}>
+    <section
+      ref={sectionRef}
+      className={cn("py-6 px-6 md:px-16 pb-0 mb-20 md:-mt-24")}
+    >
       <p
         className={cn(
           "sticky top-10 text-4xl md:text-5xl font-semibold text-center mb-10"
