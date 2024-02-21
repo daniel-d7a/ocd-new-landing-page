@@ -13,11 +13,6 @@ export const Projects = () => {
     offset: ["start start", "end end"],
   });
 
-  const inView = useInView(containerRef, {
-    once: false,
-    amount: 0.2,
-  });
-
   scrollYProgress.on("change", (latest) => {
     console.log("latest => ", latest);
   });
@@ -32,7 +27,7 @@ export const Projects = () => {
   });
 
   const mobile = isMobile();
-  const scroll = mobile ? -135 : -56;
+  const scroll = mobile ? -50 : -56;
 
   const textScroll = useTransform(
     textPos,
@@ -42,26 +37,13 @@ export const Projects = () => {
 
   return (
     <section ref={containerRef} className="py-10 pt-14 md:block flex flex-col ">
-      <div className="sticky z-10 top-4 text-4xl md:text-5xl font-semibold text-center flex items-center justify-center">
+      <div className="hidden sticky z-10 top-4 text-4xl md:text-5xl font-semibold text-center md:flex items-center justify-center">
         <p>Our </p>
         <motion.div
-          // style={{
-          //   width: !inView
-          //     ? "0%"
-          //     : typeIndex === 0
-          //     ? mobile
-          //       ? "31%"
-          //       : "12%"
-          //     : typeIndex === 1
-          //     ? mobile
-          //       ? "42%"
-          //       : "17%"
-          //     : "0%",
-          // }}
-          style={{
-            width: !inView ? "0%" : typeIndex === 0 ? "160px" : "210px",
+          whileInView={{
+            width: typeIndex === 0 ? "160px" : "210px",
           }}
-          className="mx-1 h-14 inline-block overflow-hidden transition-all"
+          className="mx-1 h-14 inline-block overflow-hidden transition-all w-0"
         >
           <motion.div
             style={{ y: textScroll }}
@@ -69,6 +51,28 @@ export const Projects = () => {
           >
             {projectTypes.map((type, i) => (
               <p className={cn("mt-1")} key={type}>
+                {type}
+              </p>
+            ))}
+          </motion.div>
+        </motion.div>
+        <p>Work</p>
+      </div>
+
+      <div className="sticky z-10 mb-4 top-4 text-4xl md:text-5xl font-semibold text-center md:hidden flex flex-col gap-0  items-center justify-center">
+        <p>Our</p>
+        <motion.div
+          whileInView={{
+            height: "40px",
+          }}
+          className="mx-1 h-0 inline-block overflow-hidden transition-all"
+        >
+          <motion.div
+            style={{ y: textScroll }}
+            className="space-y-2 flex flex-col justify-center"
+          >
+            {projectTypes.map((type, i) => (
+              <p className={cn("")} key={type}>
                 {type}
               </p>
             ))}

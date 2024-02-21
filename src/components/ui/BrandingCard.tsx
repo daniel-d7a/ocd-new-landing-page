@@ -37,11 +37,13 @@ export function BrandingCard({
       style={{
         left: `${isMobile ? 35 : 10}px`,
       }}
-      className=" flex-shrink-0 w-[75%] md:w-[89%] sticky  rounded-xl shadow-lg drop-shadow-lg h-[95dvh] md:h-auto"
+      className=" flex-shrink-0 w-[89%] sticky rounded-xl shadow-lg drop-shadow-lg max-h-[85dvh]  md:max-h-auto pt-10"
     >
-      <div className="flex flex-col md:flex-row gap-10 bg-neutral-800 p-4 py-10 rounded-xl mt-12">
+      <div className="flex flex-col md:flex-row gap-10 bg-neutral-800 p-4 md:pt-10 pt-6 rounded-xl mt-14 md:mt-12">
         <div className={cn("w-full md:w-3/5 md:ml-14")}>
-          <p className="text-3xl font-semibold md:text-6xl mb-6 ">{name}</p>
+          <p className="text-3xl font-semibold md:text-6xl mb-2 md:mb-6 ">
+            {name}
+          </p>
           <p className={cn("md:text-xl md:w-3/4", montserrat.className)}>
             {text}
           </p>

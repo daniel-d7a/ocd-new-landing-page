@@ -27,7 +27,7 @@ export const Services = () => {
         What do we offer?
       </p>
       <div className="gap-4 hidden md:grid grid-cols-3 gap-y-[14vw] 2xl:gap-y-[18vw] text-white mt-[20vw] 2xl:mt-[26vw]">
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
+        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
           <div className="flex">
             <Image
               className="relative w-10/12 left-[40%] -translate-x-2/3 -translate-y-12"
@@ -35,7 +35,7 @@ export const Services = () => {
               alt="cam1"
             />
             <Image
-              className="absolute w-5/12 -translate-x-4 -translate-y-6"
+              className="absolute scale-125 translate-x-20 translate-y-16"
               src={camera2}
               alt="cam1"
             />
@@ -45,7 +45,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
+        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
           <Image
             className="relative scale-[1.5]"
             src={branding}
@@ -56,7 +56,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
+        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
           <Image
             className="relative -translate-y-10 scale-[2]"
             src={content}
@@ -66,7 +66,7 @@ export const Services = () => {
             content creation
           </p>
         </div>
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
+        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
           <Image
             className="relative -translate-y-16 2xl:-translate-y-10 -translate-x-8 scale-[1.4]"
             src={marketing}
@@ -76,7 +76,7 @@ export const Services = () => {
             marketing
           </p>
         </div>
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
+        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
           {/* <Image
             className="relative translate-y-20 scale-75"
             src={reasearch}
@@ -86,7 +86,7 @@ export const Services = () => {
             Software
           </p>
         </div>
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
+        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
           {/* <Image
             className="relative translate-y-20 scale-75"
             src={reasearch}
@@ -99,7 +99,7 @@ export const Services = () => {
       </div>
 
       <div className=" md:hidden block mt-[60vw] text-white">
-        <div className="flex flex-col justify-end bg-neutral-800 h-52 p-6 w-full rounded-xl">
+        <div className="flex flex-col justify-end  h-52 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
           <div className="flex relative">
             <Image
               className="relative w-10/12 left-[40%] -translate-x-2/3 -translate-y-4"
@@ -113,7 +113,7 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold">Media Production</p>
         </div>
 
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl mt-[66vw]">
+        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[66vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
           <Image
             className="relative -translate-y-16 scale-[1.7]"
             src={branding}
@@ -124,7 +124,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl mt-[58vw]">
+        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl mt-[58vw] grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
           <Image
             className="relative -translate-y-12 scale-[2.2]"
             src={content}
@@ -135,7 +135,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl mt-[44vw]">
+        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[44vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
           <Image
             className="relative -translate-y-24 -translate-x-8 scale-[1.6]"
             src={marketing}
@@ -146,7 +146,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl mt-[20vw]">
+        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl mt-[20vw] grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
           {/* <Image
             className="relative translate-y-20 scale-75"
             src={reasearch}
@@ -156,7 +156,7 @@ export const Services = () => {
             Software
           </p>
         </div>
-        <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl mt-[20vw]">
+        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[20vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
           {/* <Image
             className="relative translate-y-20 scale-75"
             src={reasearch}
