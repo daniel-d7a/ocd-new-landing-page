@@ -61,7 +61,7 @@ export const Projects = () => {
           style={{
             width: !inView ? "0%" : typeIndex === 0 ? "160px" : "210px",
           }}
-          className="ml-1 h-14 inline-block overflow-hidden transition-all"
+          className="mx-1 h-14 inline-block overflow-hidden transition-all"
         >
           <motion.div
             style={{ y: textScroll }}
@@ -75,7 +75,6 @@ export const Projects = () => {
           </motion.div>
         </motion.div>
         <p>Work</p>
-        <div className="ml-10">Our Design Work</div>
       </div>
       <Design />
       <Branding />

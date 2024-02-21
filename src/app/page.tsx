@@ -10,12 +10,12 @@ import { Clients } from "@/components/home/Clients";
 export default function Home() {
   return (
     <main className="">
-      <Hero />
+      {/* <Hero />
       <AboutUs />
-      <Services />
+      <Services /> */}
       <Projects />
-      <Clients />
-      <Testmonials />
+      {/* <Clients />
+      <Testmonials /> */}
     </main>
   );
 }
