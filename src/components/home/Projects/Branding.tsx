@@ -16,7 +16,7 @@ export const Branding = () => {
 
   let isMobile = isMobileFunc();
 
-  const x = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 1200 : 4500]);
+  const x = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 1200 : 5500]);
 
   x.on("change", (latest) => {
     console.log("latest => ", latest);
