@@ -24,10 +24,10 @@ export const Count = ({
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <span className="text-ocd-yellow text-6xl md:text-7xl font-normal">
+      <span className="text-ocd-yellow text-4xl md:text-7xl font-normal">
         {x.toFixed(0)}+
       </span>
-      <p className="text-3xl md:text-4xl font-normal w-full text-center">
+      <p className="text-xl md:text-4xl font-normal w-full text-center">
         {text}
       </p>
     </div>

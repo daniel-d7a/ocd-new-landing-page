@@ -1,3 +1,5 @@
+"use client";
+
 import { Testmonials } from "@/components/home/Testmonials";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
@@ -8,12 +10,12 @@ import { Clients } from "@/components/home/Clients";
 export default function Home() {
   return (
     <main className="">
-      <Hero />
+      {/* <Hero />
       <AboutUs />
-      <Services />
+      <Services /> */}
       <Projects />
-      <Clients />
-      <Testmonials />
+      {/* <Clients />
+      <Testmonials /> */}
     </main>
   );
 }

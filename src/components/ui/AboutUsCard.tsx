@@ -38,7 +38,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        " sticky top-20 md:flex w-full justify-center h-[90dvh] py-6 md:py-14 gap-10",
+        " sticky top-20 md:flex w-full justify-center h-[90dvh] py-6 md:py-14 gap-10 snap-center",
         index % 2 === 0 && "flex-row-reverse"
       )}
     >

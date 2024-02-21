@@ -43,7 +43,7 @@ export const Projects = () => {
   return (
     <section ref={containerRef} className="py-10 pt-14 md:block flex flex-col ">
       <div className="sticky z-10 top-4 text-4xl md:text-5xl font-semibold text-center flex items-baseline justify-center">
-        Our
+        Our{" "}
         <motion.div
           style={{
             width: !inView
@@ -61,11 +61,14 @@ export const Projects = () => {
           className="mx-1 h-14 inline-block overflow-hidden transition-all"
         >
           <div className="w-full">
-            <motion.p style={{ x: textScroll }} className="space-x-6">
+            <motion.div
+              style={{ y: textScroll }}
+              className="space-x-6 flex flex-col"
+            >
               {projectTypes.map((type) => (
-                <span key={type}>{type}</span>
+                <p key={type}>{type}</p>
               ))}
-            </motion.p>
+            </motion.div>
           </div>
         </motion.div>
         Work

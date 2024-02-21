@@ -29,13 +29,13 @@ import Image from "next/image";
 
 export const Clients = () => {
   return (
-    <section className="my-20">
+    <section className="my-20 py-40 space-y-20">
       <p className="text-white mx-6 text-4xl md:text-5xl font-semibold text-center mb-16">
         Our Clients
       </p>
       <Scroller
-        baseVelocity={100}
-        className="h-40 grayscale -rotate-3 origin-left"
+        baseVelocity={75}
+        className="h-40 origin-left "
         snapStart={-60}
         snapEnd={-1350}
       >
@@ -46,11 +46,7 @@ export const Clients = () => {
         <Image src={logo5} alt="logo5" />
         <Image className="scale-[1.4] mr-6 " src={logo6} alt="logo6" />
       </Scroller>
-      <Scroller
-        baseVelocity={-100}
-        className="h-40 grayscale rotate-3 origin-left"
-        snapStart={50}
-      >
+      <Scroller baseVelocity={-75} className="h-40 origin-left" snapStart={50}>
         <Image src={logo7} alt="logo7" />
         <Image src={logo8} alt="logo8" />
         <Image className="mx-6 scale-150" src={logo9} alt="logo9" />
@@ -59,8 +55,8 @@ export const Clients = () => {
         <Image src={logo12} alt="logo12" />
       </Scroller>
       <Scroller
-        baseVelocity={100}
-        className="h-40 grayscale -rotate-3 origin-left mt-10"
+        baseVelocity={0}
+        className="h-40 -rotate-3 origin-left mt-40"
         snapStart={-30}
       >
         <Image src={logo13} alt="logo13" />
@@ -71,8 +67,8 @@ export const Clients = () => {
         <Image src={logo18} alt="logo18" />
       </Scroller>
       <Scroller
-        baseVelocity={-100}
-        className="h-40 grayscale rotate-3 origin-left mt-10"
+        baseVelocity={-0}
+        className="h-40  rotate-3 origin-left mt-10"
         snapStart={10}
       >
         <Image src={logo19} alt="logo19" />

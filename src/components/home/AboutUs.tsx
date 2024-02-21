@@ -4,7 +4,6 @@ import { useScroll, MotionValue } from "framer-motion";
 import { ElementRef, useRef } from "react";
 import { cn } from "@/lib/cn";
 import { Text } from "@/components/ui/UpText";
-import img from "@/assets/megaphone2.png";
 import { Card } from "../ui/AboutUsCard";
 import { montserrat, recoleta } from "@/lib/fonts";
 
@@ -17,6 +16,7 @@ export const AboutUs = () => {
 
   return (
     <section
+      id="section2"
       ref={sectionRef}
       className={cn("py-6 px-6 md:px-16 pb-0 mb-20 md:-mt-24")}
     >
@@ -30,7 +30,7 @@ export const AboutUs = () => {
 
       <div
         className={cn(
-          "min-h-[400vh] px-2 md:px-20 flex flex-col text-white",
+          "min-h-[400vh] px-2 md:px-20 flex flex-col text-white snap-y snap-mandatory",
           montserrat.className
         )}
       >

@@ -26,7 +26,7 @@ export const Services = () => {
       <p className="text-4xl md:text-5xl font-semibold text-center">
         What do we offer?
       </p>
-      <div className="gap-4 hidden md:grid grid-cols-3 gap-y-[14vw] 2xl:gap-y-[18vw] text-white mt-[20vw] 2xl:mt-[20vw]">
+      <div className="gap-4 hidden md:grid grid-cols-3 gap-y-[14vw] 2xl:gap-y-[18vw] text-white mt-[20vw] 2xl:mt-[26vw]">
         <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
           <div className="flex">
             <Image
@@ -68,7 +68,7 @@ export const Services = () => {
         </div>
         <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
           <Image
-            className="relative -translate-y-16 -translate-x-8 scale-[1.4]"
+            className="relative -translate-y-16 2xl:-translate-y-10 -translate-x-8 scale-[1.4]"
             src={marketing}
             alt="branding"
           />
@@ -83,7 +83,7 @@ export const Services = () => {
             alt="branding"
           /> */}
           <p className="text-4xl text-center font-semibold capitalize">
-            reasearch
+            Software
           </p>
         </div>
         <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl">
@@ -153,7 +153,7 @@ export const Services = () => {
             alt="branding"
           /> */}
           <p className="text-4xl text-center font-semibold capitalize">
-            reasearch
+            Software
           </p>
         </div>
         <div className="flex flex-col justify-end bg-neutral-800 h-60 p-6 w-full rounded-xl mt-[20vw]">

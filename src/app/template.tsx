@@ -46,7 +46,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       {dimensions.width != null && (
         <>
           <p className={cn(recoleta.className, styles.textSlideUpAnimation)}>
-            {pathname.split("/").at(-1) || "Home"}
+            {pathname.split("/").at(-1)?.replaceAll("%20", " ") || "Home"}
           </p>
           <SVG {...(dimensions as { width: number; height: number })} />
         </>
@@ -109,7 +109,7 @@ const SVG = ({ height, width }: { height: number; width: number }) => {
 
   return (
     <svg className={styles.svg}>
-      <path d={initialPath} fill={"#404040"} />
+      <path d={initialPath} fill={"#FFD900"} />
     </svg>
   );
 };
