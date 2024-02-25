@@ -16,8 +16,8 @@ export const Scroller = ({
   children,
   baseVelocity,
   className,
-  snapStart,
-  snapEnd,
+  snapStart = -60,
+  snapEnd = -1350,
 }: {
   children: ReactNode | ReactNode[];
   baseVelocity: number;
@@ -52,10 +52,10 @@ export const Scroller = ({
 
     let newX = baseX.get() + moveBy;
 
-    if (newX < (snapEnd ?? -1350)) {
-      newX = snapStart ?? -60;
-    } else if (newX > (snapStart ?? -60)) {
-      newX = snapEnd ?? -1350;
+    if (newX < snapEnd) {
+      newX = snapStart;
+    } else if (newX > snapStart) {
+      newX = snapEnd;
     }
 
     baseX.set(newX);
