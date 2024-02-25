@@ -1,11 +1,14 @@
 "use client";
-
 import { useScroll, MotionValue } from "framer-motion";
 import { ElementRef, useRef } from "react";
 import { cn } from "@/lib/cn";
 import { Text } from "@/components/ui/UpText";
 import { Card } from "../ui/AboutUsCard";
 import { montserrat, recoleta } from "@/lib/fonts";
+import ocd1 from "@/assets/new images/OCD1.png";
+import ocd2 from "@/assets/new images/OCD2.png";
+import ocd3 from "@/assets/new images/OCD3.png";
+import einstein from "@/assets/new images/Einstein.png";
 
 export const AboutUs = () => {
   const sectionRef = useRef<ElementRef<"section">>(null);
@@ -52,7 +55,7 @@ export const AboutUs = () => {
 const cardsContent = [
   {
     content: (y: MotionValue<number>) => (
-      <>
+      <div>
         <Text
           y={y}
           className={cn(
@@ -62,7 +65,17 @@ const cardsContent = [
         >
           What is the first thing that came to your mind when you read “OCD”?
         </Text>
-        <div className="my-4 space-y-2">
+
+        <Text y={y} className="text-xl mb-4">
+          When you saw OCD did you think of a mental illness, a title
+          abbreviation, or just three letters together? They all fit. But we see
+          it differently.
+        </Text>
+        <Text y={y} className="text-xl mb-4">
+          We embrace it to reflect our personalities—adapting with skill,
+          passion, and creativity.
+        </Text>
+        {/* <div className="my-4 space-y-2">
           <Text y={y}>A mental illness?</Text>
           <Text y={y}>An abbreviation for a title?</Text>
           <Text y={y}>Or just three letters close together?</Text>
@@ -103,15 +116,14 @@ const cardsContent = [
           <Text y={y}>
             keep pace with their skill, passion, and creative thought.
           </Text>
-        </div>
-      </>
+        </div> */}
+      </div>
     ),
-    image:
-      "https://i.pinimg.com/736x/6b/de/b1/6bdeb1109ce11a40409626a6f28dc803.jpg",
+    image: einstein.src,
   },
   {
     content: (y: MotionValue<number>) => (
-      <>
+      <div>
         {" "}
         <Text y={y}>We are OCD, so we are:</Text>
         <Text
@@ -124,14 +136,13 @@ const cardsContent = [
           We never risk failure. We take steady, confident and carefully
           considered steps towards the success of your brand.
         </Text>
-      </>
+      </div>
     ),
-    image:
-      "https://i.pinimg.com/736x/de/3b/ee/de3bee981da8fca1eb88032a6e6f8f61.jpg",
+    image: ocd1.src,
   },
   {
     content: (y: MotionValue<number>) => (
-      <>
+      <div>
         <Text y={y}>We are OCD, so we are:</Text>
         <Text
           y={y}
@@ -147,14 +158,13 @@ const cardsContent = [
           Our work based on every small detail to ultimately produce successful
           work from all angles and by all standards.
         </Text>
-      </>
+      </div>
     ),
-    image:
-      "https://img.fixthephoto.com/blog/images/gallery/news_preview_mob_image__preview_559.jpg",
+    image: ocd2.src,
   },
   {
     content: (y: MotionValue<number>) => (
-      <>
+      <div>
         <Text y={y}>We are OCD, so we are:</Text>
         <Text
           y={y}
@@ -170,9 +180,8 @@ const cardsContent = [
           We feel what you feel and dream what you dream. Your brand&apos;s
           problems affect us, and its success makes us happy as well.
         </Text>
-      </>
+      </div>
     ),
-    image:
-      "https://i.pinimg.com/originals/1a/a4/88/1aa488ed6d719f49dfdc3c4ca32d98d9.jpg",
+    image: ocd3.src,
   },
 ];

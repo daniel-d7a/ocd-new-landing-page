@@ -1,9 +1,8 @@
 "use client";
 import { useTransform, motion, MotionValue } from "framer-motion";
 import { cn } from "@/lib/cn";
-import img from "@/assets/megaphone2.png";
 import Image, { StaticImageData } from "next/image";
-import { Children, ReactNode } from "react";
+import { ReactNode } from "react";
 
 export const Card = ({
   parentYProgress,
@@ -38,11 +37,11 @@ export const Card = ({
   return (
     <div
       className={cn(
-        " sticky top-20 md:flex w-full justify-center h-[90dvh] py-6 md:py-14 gap-10 snap-center",
+        " sticky top-20 md:flex w-full justify-center h-[90dvh] py-6 md:pb-14 md:pt-6 gap-10 snap-center",
         index % 2 === 0 && "flex-row-reverse"
       )}
     >
-      <div className=" md:text-lg w-full md:w-3/5">
+      <div className=" md:text-lg w-full md:w-2/5 grid place-items-center">
         {children(textPosition)}
       </div>
       <div className=" grid place-items-start w-full md:w-2/5  overflow-hidden">
