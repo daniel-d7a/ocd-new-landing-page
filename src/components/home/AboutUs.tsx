@@ -66,12 +66,12 @@ const cardsContent = [
           What is the first thing that came to your mind when you read “OCD”?
         </Text>
 
-        <Text y={y} className="text-xl mb-4">
+        <Text y={y} className="text-base md:text-xl mb-4">
           When you saw OCD did you think of a mental illness, a title
           abbreviation, or just three letters together? They all fit. But we see
           it differently.
         </Text>
-        <Text y={y} className="text-xl mb-4">
+        <Text y={y} className="text-base md:text-xl mb-4">
           We embrace it to reflect our personalities—adapting with skill,
           passion, and creativity.
         </Text>
@@ -132,7 +132,7 @@ const cardsContent = [
         >
           Cautious
         </Text>
-        <Text y={y} className="text-xl mb-4">
+        <Text y={y} className="text-base md:text-xl mb-4">
           We never risk failure. We take steady, confident and carefully
           considered steps towards the success of your brand.
         </Text>
@@ -150,11 +150,11 @@ const cardsContent = [
         >
           Attentive
         </Text>
-        <Text y={y} className="text-xl">
+        <Text y={y} className="text-base md:text-xl">
           Before you became our client, we were your followers. Our observation
           and scrutiny of every detail makes us the safe house for your brand.
         </Text>
-        <Text y={y} className="text-xl mt-4 mb-4">
+        <Text y={y} className="text-base md:text-xl mt-4 mb-4">
           Our work based on every small detail to ultimately produce successful
           work from all angles and by all standards.
         </Text>
@@ -172,11 +172,11 @@ const cardsContent = [
         >
           Empathetic
         </Text>
-        <Text y={y} className="text-xl">
+        <Text y={y} className="text-base md:text-xl">
           We are not the audience that will applaud you in the end. We are the
           friend who will walk the path with you step by step.
         </Text>
-        <Text y={y} className="text-xl mt-4 mb-4">
+        <Text y={y} className="text-base md:text-xl mt-4 mb-4">
           We feel what you feel and dream what you dream. Your brand&apos;s
           problems affect us, and its success makes us happy as well.
         </Text>

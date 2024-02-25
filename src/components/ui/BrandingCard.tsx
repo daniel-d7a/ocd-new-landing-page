@@ -3,7 +3,6 @@ import Image from "next/image";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import { cn } from "@/lib/cn";
 import { montserrat } from "@/lib/fonts";
-import { useEffect } from "react";
 import { isMobile as isMobileFunc } from "@/lib/utils";
 import Link from "next/link";
 
@@ -22,14 +21,14 @@ export function BrandingCard({
 }) {
   const isMobile = isMobileFunc();
 
-  const start = isMobile ? 35 + i * 265 : 650 + 1000 * i;
-  const end = isMobile ? start + 225 : start + 400;
+  const start = 650 + 1000 * i;
+  const end = start + 400;
 
   const isLast = i === 3;
 
   const rotate = useTransform(x, [start, end], [0, 90]);
-  const xPos = useTransform(x, [start, end], [0, isMobile ? -55 : -50]);
-  const scale = useTransform(x, [start, end], [1, isMobile ? 0.6 : 0.4]);
+  const xPos = useTransform(x, [start, end], [0, -50]);
+  const scale = useTransform(x, [start, end], [1, 0.4]);
 
   return (
     <Link
