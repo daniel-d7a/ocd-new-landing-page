@@ -23,7 +23,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="md:hidden block w-full px-2  text-[5rem] ">
+        <div className="md:hidden block w-full px-2 text-[5rem]">
           <FlipText text="Design," className="mb-4" />
           <FlipText text="Develop" className="mb-4" delay={0.3} />
           <FlipText text="Market" className="mb-10" delay={0.6} />
@@ -63,9 +63,6 @@ const FlipText = ({
             duration: 0.5,
             delay: i * 0.05 + 1 + delay || 0,
             ease: [0.83, 0, 0.17, 1],
-            // repeat: Infinity,
-            // repeatType: "reverse",
-            // repeatDelay: 2.5,
           }}
           key={`${letter}${i} ${Math.random()}`}
         >
@@ -78,10 +75,7 @@ const FlipText = ({
 
   return (
     <div className={cn("relative h-20 md:h-40", className)}>
-      {/* <motion.div className="absolute flex overflow-hidden top-0 left-0 ">
-        {letters(true)}
-      </motion.div> */}
-      <motion.div className="absolute flex overflow-hidden top-0 left-0">
+      <motion.div className="absolute flex items-baseline justify-center w-full overflow-hidden top-0 left-0">
         {letters(false)}
       </motion.div>
     </div>
@@ -112,49 +106,20 @@ const YellowCapsule = () => {
           ease: [0.22, 1, 0.36, 1],
           duration: 1,
         }}
-        className="relative h-32 md:h-40 -translate-y-4 md:translate-y-4 -translate-x-1 overflow-hidden"
+        className="relative h-32 md:h-52 -translate-y-5 -translate-x-1 overflow-hidden"
       >
         <motion.div
-          // initial={{
-          //   y: 300,
-          // }}
-          // animate={{
-          //   y: 0,
-          // }}
           transition={{
             delay: 3.5,
             ease: [0.76, 0, 0.24, 1],
             duration: 1,
-            // repeat: Infinity,
-            // repeatDelay: 1.5,
           }}
           className={cn(
-            "absolute top-0 left-3 md:left-0 font-semibold md:-translate-y-8 md:px-6 w-min mb-10 text-black"
+            "absolute md:top-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold md:-translate-y-0 md:px-6 mb-10 text-black "
           )}
         >
           experts
         </motion.div>
-        {/* <motion.div
-          initial={{
-            y: 0,
-          }}
-          animate={{
-            y: -300,
-          }}
-          transition={{
-            delay: 3.5,
-            ease: [0.76, 0, 0.24, 1],
-            duration: 1,
-            // repeat: Infinity,
-            // repeatType: "reverse",
-            // repeatDelay: 1.5,
-          }}
-          className={cn(
-            "absolute top-0 left-3 md:left-0 font-semibold md:px-6 w-min mb-10 text-black"
-          )}
-        >
-          experts
-        </motion.div> */}
       </motion.div>
       <motion.div
         initial={{ width: 0 }}
