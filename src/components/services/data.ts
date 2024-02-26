@@ -34,6 +34,8 @@ export const media_production = [
   },
   {
     name: "Media Coverage",
+    slogan: "",
+    text: "",
   },
 ];
 
@@ -50,11 +52,13 @@ export const branding = [
   },
   {
     name: "Logo Design",
+    slogan: "",
+    text: "",
   },
   {
     name: "Branding",
     slogan: "Crafting Words, Inspiring Action.",
-    text: "Branding is our game. We are here to help you to identity the story of your company that makes it stand out from competitors. Our goal of branding is to earn space in the minds of the target audience and become their preferred option for doing business. So, we are very passionate about sharing the journey of your brand with you from the beginning, by translating your ideas and dreams about it into reality, into an inspiring story, a creative image, colors, features, and a unique spirit that no other brand have. Even if you did it before coming to us, we will help you rebrand it.",
+    text: "Branding is our game. We are here to help you to identity the story of your company that makes it stand out from competitors. Our goal of branding is to earn space in the minds of the target audience and become their preferred option for doing business. So, we are very passionate about sharing the journey of your brand with you from the beginning,", // by translating your ideas and dreams about it into reality, into an inspiring story, a creative image, colors, features, and a unique spirit that no other brand have. Even if you did it before coming to us, we will help you rebrand it.",
   },
 ];
 
@@ -89,13 +93,20 @@ export const media_buying = [
   },
   {
     name: "google ads",
+    slogan: "",
+    text: "",
   },
   {
     name: "social media ads",
+    slogan: "",
+    text: "",
   },
 ];
 
-export const software = [{ name: "websites" }, { name: "mobile apps" }];
+export const software = [
+  { name: "websites", slogan: "", text: "" },
+  { name: "mobile apps", slogan: "", text: "" },
+];
 
 /*
 
@@ -111,127 +122,3 @@ mobile apps
 
 
 */
-
-{
-  /* 
-      <p className="text-4xl md:text-5xl font-semibold text-center">
-        What do we offer?
-      </p>
-      <div className="mt-6">
-        <div
-          ref={socialMediaSectionRef}
-          className="flex flex-col md:grid md:grid-cols-8 justify-center gap-4"
-        >
-          <div
-            className={cn(
-              "fixed top-1/2 z-10  bg-ocd-blue rounded-b-2xl text-white -rotate-90 p-2 transition-all",
-              socialMediaInView ? "-left-20" : "-left-52"
-            )}
-          >
-            Social media managment
-          </div>
-
-          {Social_Media_Management.map((service, i) => (
-            <ServiceCard
-              key={service.name}
-              {...service}
-              classNames={[
-                yellowIndecies.includes(i)
-                  ? "md:bg-ocd-yellow md:text-black"
-                  : "md:bg-ocd-blue md:text-white",
-                i % 2 === 0
-                  ? "bg-ocd-blue text-white"
-                  : "bg-ocd-yellow text-black",
-                montserrat.className,
-                styles[i],
-              ]}
-            />
-          ))}
-        </div>
-
-        <div ref={mediaProductionSectionRef} className="mt-10">
-          <div
-            className={cn(
-              "fixed top-1/2 z-10  bg-ocd-blue rounded-b-2xl text-white -rotate-90 p-2 transition-all",
-              mediaProductionInView ? "-left-14" : "-left-52"
-            )}
-          >
-            Media Production
-          </div>
-          <div
-            className={cn(
-              "hover:grayscale-0 bg-ocd-blue text-white row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
-              montserrat.className
-            )}
-          >
-            <div className="col-span-6 md:col-span-4">
-              <p className={cn("text-3xl font-bold mb-4", recoleta.className)}>
-                {Media_Production[0].name}
-              </p>
-              <p className="font-medium">{Media_Production[0].text}</p>
-            </div>
-            <p
-              className={cn("font-semibold text-lg mt-4", montserrat.className)}
-            >
-              Covering:
-            </p>
-            <div className="flex flex-col md:flex-row flex-wrap mt-4 gap-4">
-              <div className="flex gap-4">
-                <div
-                  className={cn(
-                    "hover:grayscale-0 grayscale bg-ocd-yellow text-black row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
-                    montserrat.className
-                  )}
-                >
-                  <div className="col-span-6 md:col-span-4">
-                    <p
-                      className={cn(
-                        "text-3xl font-bold mb-4",
-                        recoleta.className
-                      )}
-                    >
-                      {Media_Production[1].name}
-                    </p>
-                    <p className="font-medium">{Media_Production[1].text}</p>
-                  </div>
-                </div>
-                <div
-                  className={cn(
-                    "hover:grayscale-0 grayscale bg-ocd-yellow text-black row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-80 min-h-64  cursor-pointer transition-all",
-                    montserrat.className
-                  )}
-                >
-                  <div className="col-span-6 md:col-span-4">
-                    <p
-                      className={cn(
-                        "text-3xl font-bold mb-4",
-                        recoleta.className
-                      )}
-                    >
-                      {Media_Production[2].name}
-                    </p>
-                    <p className="font-medium">{Media_Production[2].text}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <ServiceCard
-                  {...Media_Production[3]}
-                  classNames={["bg-ocd-yellow text-black"]}
-                />
-                <div className="flex flex-col gap-4">
-                  <ServiceCard
-                    {...Media_Production[4]}
-                    classNames={["bg-ocd-yellow text-black"]}
-                  />
-                  <ServiceCard
-                    {...Media_Production[5]}
-                    classNames={["bg-ocd-yellow text-black"]}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */
-}

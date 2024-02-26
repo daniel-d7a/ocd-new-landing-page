@@ -10,6 +10,7 @@ import mediaBuying from "@/assets/new images/Media-buying.png";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Services = () => {
   return (
@@ -29,7 +30,10 @@ export const Services = () => {
         What do we offer?
       </p>
       <div className="gap-4 hidden md:grid grid-cols-3 gap-y-[14vw] 2xl:gap-y-[18vw] text-white mt-[20vw] 2xl:mt-[26vw]">
-        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
+        <Link
+          href={"/Services#media_production"}
+          className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all"
+        >
           <div className="flex">
             <Image
               className="relative w-10/12 left-[40%] -translate-x-2/3 -translate-y-12"
@@ -45,9 +49,12 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             Media Production
           </p>
-        </div>
+        </Link>
 
-        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
+        <Link
+          href={"/Services#branding"}
+          className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative scale-[1.5] -translate-y-12"
             src={branding}
@@ -56,9 +63,12 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             Branding
           </p>
-        </div>
+        </Link>
 
-        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
+        <Link
+          href={"/Services#content_creation"}
+          className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative -translate-y-10 scale-[2]"
             src={content}
@@ -67,8 +77,11 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             content creation
           </p>
-        </div>
-        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
+        </Link>
+        <Link
+          href={"/Services#marketing"}
+          className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative -translate-y-16 2xl:-translate-y-10 -translate-x-8 scale-[1.4]"
             src={marketing}
@@ -77,8 +90,11 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             marketing
           </p>
-        </div>
-        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
+        </Link>
+        <Link
+          href={"/Services#software"}
+          className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative scale-[1.7] -translate-y-20 -translate-x-6"
             src={software}
@@ -87,21 +103,27 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             Software
           </p>
-        </div>
-        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
+        </Link>
+        <Link
+          href={"/Services#media_buying"}
+          className="flex flex-col justify-end h-60 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative scale-[1.2] -translate-y-16 translate-x-1"
             src={mediaBuying}
-            alt="branding"
+            alt="mediaBuying"
           />
           <p className="text-4xl text-center font-semibold capitalize">
             media buying
           </p>
-        </div>
+        </Link>
       </div>
 
       <div className=" md:hidden block mt-[60vw] text-white">
-        <div className="flex flex-col justify-end  h-52 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
+        <Link
+          href={"/Services#media_production"}
+          className="flex flex-col justify-end  h-52 p-6 w-full rounded-xl grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all"
+        >
           <div className="flex relative">
             <Image
               className="relative w-10/12 left-[40%] -translate-x-2/3 -translate-y-4"
@@ -113,9 +135,12 @@ export const Services = () => {
             </div>
           </div>
           <p className="text-4xl text-center font-semibold">Media Production</p>
-        </div>
+        </Link>
 
-        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[66vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
+        <Link
+          href={"/Services#branding"}
+          className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[66vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative -translate-y-16 scale-[1.7]"
             src={branding}
@@ -124,9 +149,12 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             Branding
           </p>
-        </div>
+        </Link>
 
-        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl mt-[58vw] grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
+        <Link
+          href={"/Services#content_creation"}
+          className="flex flex-col justify-end h-60 p-6 w-full rounded-xl mt-[58vw] grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative -translate-y-12 scale-[2.2]"
             src={content}
@@ -135,9 +163,12 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             content creation
           </p>
-        </div>
+        </Link>
 
-        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[44vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
+        <Link
+          href={"/Services#marketing"}
+          className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[44vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative -translate-y-24 -translate-x-8 scale-[1.6]"
             src={marketing}
@@ -146,9 +177,12 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             marketing
           </p>
-        </div>
+        </Link>
 
-        <div className="flex flex-col justify-end h-60 p-6 w-full rounded-xl mt-[48vw] grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all">
+        <Link
+          href={"/Services#software"}
+          className="flex flex-col justify-end h-60 p-6 w-full rounded-xl mt-[48vw] grayscale hover:grayscale-0 bg-ocd-yellow text-black shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative scale-[2.4] -translate-y-24 -translate-x-6"
             src={software}
@@ -157,8 +191,11 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             Software
           </p>
-        </div>
-        <div className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[40vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all">
+        </Link>
+        <Link
+          href={"/Services#media_buying"}
+          className="flex flex-col justify-end  h-60 p-6 w-full rounded-xl mt-[40vw] grayscale hover:grayscale-0 bg-ocd-blue text-white shadow-xl drop-shadow-xl transition-all"
+        >
           <Image
             className="relative scale-[1.4] -translate-y-14"
             src={mediaBuying}
@@ -167,7 +204,7 @@ export const Services = () => {
           <p className="text-4xl text-center font-semibold capitalize">
             media buying
           </p>
-        </div>
+        </Link>
       </div>
     </motion.section>
   );

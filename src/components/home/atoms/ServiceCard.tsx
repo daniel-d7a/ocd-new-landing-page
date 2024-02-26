@@ -28,19 +28,24 @@ export const ServiceCard = ({
 }: {
   name: string;
   slogan: string;
-  image: StaticImageData;
+  image?: StaticImageData;
   text: string;
   classNames?: ClassValue[] | ClassValue;
 }) => {
   return (
     <div
       className={cn(
-        "hover:grayscale-0 grayscale row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 md:min-h-40 min-h-64  cursor-pointer transition-all",
+        "hover:grayscale-0 grayscale row-span-1 md:w-full box-border drop-shadow-lg shadow-lg w-full rounded-xl p-6 cursor-pointer transition-all",
         classNames
       )}
     >
       <div className="col-span-6 md:col-span-4">
-        <p className={cn("text-3xl font-bold mb-4", recoleta.className)}>
+        <p
+          className={cn(
+            "text-3xl font-bold mb-4 capitalize text-center",
+            recoleta.className
+          )}
+        >
           {name}
         </p>
         <p className="font-medium">{text}</p>

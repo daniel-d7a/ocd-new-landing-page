@@ -50,7 +50,7 @@ export const Card = ({
             x: imagePosition,
           }}
           initial={{ filter: "blur(20px)" }}
-          whileInView={{ filter: "blur(0px)" }}
+          whileInView={{ filter: "blur(0px)" }} 
           viewport={{ once: false, amount: 0.5 }}
           className="w-full h-full"
         >
